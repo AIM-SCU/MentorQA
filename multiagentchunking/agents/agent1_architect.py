@@ -1,0 +1,227 @@
+import torch
+from typing import List, Dict
+from processors.json_parser import JSONParser
+from common_utils import config
+import json
+
+def merge_consecutive_segments(segments: List[Dict]) -> List[Dict]:
+    merged = []
+    current = None
+    
+    for segment in sorted(segments, key=lambda x: x['start_line']):
+        if current is None:
+            current = segment
+        elif current['title'] == segment['title']:
+            # Merge by extending the end line
+            current['end_line'] = segment['end_line']
+        else:
+            merged.append(current)
+            current = segment
+    
+    if current:
+        merged.append(current)
+    
+    # Reassign IDs sequentially
+    for i, seg in enumerate(merged, 1):
+        seg['id'] = i
+        
+    return merged
+
+def deduplicate_segments(segments: List[Dict]) -> List[Dict]:
+    seen_titles = set()
+    cleaned = []
+    for seg in segments:
+        title = seg.get("title", "").strip()
+        if title and title not in seen_titles:
+            cleaned.append(seg)
+            seen_titles.add(title)
+    return cleaned
+
+class Architect:
+    def __init__(self, model_handler):
+        self.model_handler = model_handler
+
+    def run_agent1_architect(self, numbered_transcript_str: str) -> List[Dict]:
+        """Agent 1 (Architect): Creates a structural blueprint of the transcript."""
+        print("🧠 Running Agent 1 (Architect) to create semantic blueprint...")
+        
+        # Language settings
+        lang_code = config.LANGUAGE_CODE   # e.g., 'zh'
+        lang_name = config.LANGUAGE_NAME
+        
+        # Strong instruction to keep output in the target language
+        lang_guard = (
+            "IMPORTANT: Reply strictly in {name}. "
+            "Do not use English unless an English word appears verbatim in the input. "
+            "Ensure JSON structure is valid and complete."
+        ).format(name=lang_name)
+        
+        # Enhanced system prompt with more specific instructions
+        system_prompt = (
+            f"You are a hardworking {lang_name} document analysis expert specialized in creating structured document summaries. "
+            f"You excel at avoiding duplicates in topics and maintaining proper sequential order. "
+            f"{lang_guard}"
+        )
+        # prompt = f"""Based on the numbered transcript below, create a JSON list of dictionaries in {lang_name}. Each dictionary must have these keys: "id" (a sequential integer), "title" (a concise topic title), "start_line" (integer), and "end_line" (integer). Output ONLY the raw JSON list.
+        
+        # Transcript:
+        # {numbered_transcript_str}"""
+        
+        prompt = f"""Based on the numbered transcript below, create a JSON list of topic-based segments in {lang_name}. Each segment represents a coherent topic, not just a few sentences.
+        Follow these rules:
+
+        1. Each dictionary must have these keys:
+           - "id" (sequential integer)
+           - "title" (concise topic title)
+           - "start_line" (integer)
+           - "end_line" (integer)
+           
+        2. Grouping & Granularity:
+            - Cover the entire transcript, which has about 2000 lines.
+            - Each segment should cover as much of consecutive lines as possible, unless there is a topic change.
+            - Merge adjacent lines or short topics that describe the same or closely related ideas. 
+
+        3. Semantic coherence:
+            - Group by **topic or idea**, not by sentence.
+            - Combine similar or repetitive ideas into one segment.
+            - Avoid splitting just because of minor wording changes or pauses.
+            - Keep the sequence continuous: no overlaps, no gaps.
+        
+        4. Output Guidelines:
+            - Output ONLY valid JSON array
+            - Ensure all lines are covered exactly once.
+            - Keep titles meaningful and descriptive
+
+        Transcript:
+        {numbered_transcript_str}"""
+        
+
+        
+        messages = [{"role": "system", "content": system_prompt}, 
+                   {"role": "user", "content": prompt}]
+
+        text = self.model_handler.tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True)
+
+        inputs = self.model_handler.tokenizer(
+            text, return_tensors="pt", truncation=True, max_length=131072).to(self.model_handler.model.device)
+
+        with torch.no_grad():
+            outputs = self.model_handler.model.generate(
+                **inputs, max_new_tokens=4096, pad_token_id=self.model_handler.tokenizer.eos_token_id)
+
+        response = self.model_handler.tokenizer.decode(
+            outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
+
+        print('testing', response)
+        # saving intermediate chunks
+        segments_file = "debug_chunk.json"
+        with open(segments_file, 'w', encoding='utf-8') as f:
+            json.dump(response, f, indent=2, ensure_ascii=False) 
+        print(f"Debug: segment file saved to: {segments_file}")
+        
+        json_parser = JSONParser()
+        blueprint = json_parser.extract_json_from_response(response)
+
+        if blueprint is None:
+            print("❌ No valid JSON extracted. Passing raw response downstream...")
+            # Fallback: wrap raw response so the next agent still receives something
+            blueprint = [{
+                "id": 0,
+                "title": "Raw Response",
+                "start_line": 0,
+                "end_line": 0,
+                "raw_text": response
+            }]
+            
+        return blueprint
+
+        # # 🔥 First merge consecutive segments with same title
+        # merged_blueprint = merge_consecutive_segments(blueprint)
+        # print(f"📍 Merged consecutive segments: {len(merged_blueprint)} segments")
+
+        # # Then deduplicate any remaining duplicates
+        # cleaned_blueprint = deduplicate_segments(merged_blueprint)
+        # print(f"✅ Architect created blueprint with {len(cleaned_blueprint)} unique segments "
+        #       f"(from {len(blueprint)} total).")
+
+        # return cleaned_blueprint
+
+
+
+# class Architect:
+#     def __init__(self, model_handler):
+#         self.model_handler = model_handler
+
+#     def run_agent1_architect(self, numbered_transcript_str: str) -> List[Dict]:
+#         """Agent 1 (Architect): Creates a structural blueprint of the transcript."""
+#         print("🧠 Running Agent 1 (Architect) to create semantic blueprint...")
+        
+#         # Language settings
+#         lang_code = config.LANGUAGE_CODE   # e.g., 'zh'
+#         lang_name = config.LANGUAGE_NAME
+#         # Strong instruction to keep output in the target language
+#         lang_guard = (
+#             "IMPORTANT: Reply strictly in {name}. "
+#             "Do not use English unless an English word appears verbatim in the input."
+#         ).format(name=lang_name)
+        
+#         # Note: changed the system prompt
+#         system_prompt = (f"You are a {lang_name} document analysis expert."
+#                          f"{lang_guard}")
+        
+#         prompt = f"""Based on the numbered transcript below, create a JSON list of dictionaries in {lang_name}. Each dictionary must have these keys: "id" (a sequential integer), "title" (a concise topic title), "start_line" (integer), and "end_line" (integer). Output ONLY the raw JSON list. 
+
+#         Transcript:
+#         {numbered_transcript_str}"""
+        
+        
+#         messages = [{"role": "system", "content": system_prompt}, 
+#                     {"role": "user", "content": prompt}]
+
+#         text = self.model_handler.tokenizer.apply_chat_template(
+#             messages, tokenize=False, add_generation_prompt=True)
+
+#         inputs = self.model_handler.tokenizer(
+#             text, return_tensors="pt", truncation=True, max_length=131072).to(self.model_handler.model.device)
+
+#         with torch.no_grad():
+#             outputs = self.model_handler.model.generate(
+#                 **inputs, max_new_tokens=4096, pad_token_id=self.model_handler.tokenizer.eos_token_id)
+
+#         response = self.model_handler.tokenizer.decode(
+#             outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
+
+#         print('testing', response)
+#          # saving intermediate chunks
+#         segments_file = "chunk.json"
+#         with open(segments_file, 'w', encoding='utf-8') as f:
+#              json.dump(response, f, indent=2, ensure_ascii=False) 
+#         print(f"Segments file saved to: {segments_file}")
+        
+#         json_parser = JSONParser()
+#         blueprint = json_parser.extract_json_from_response(response)
+
+#         """
+
+#         if blueprint is None:
+#             print("❌ No valid JSON extracted. Passing raw response downstream...")
+#             # Fallback: wrap raw response so the next agent still receives something
+#             blueprint = [{
+#                 "id": 0,
+#                 "title": "Raw Response",
+#                 "start_line": 0,
+#                 "end_line": 0,
+#                 "raw_text": response
+#             }]
+
+#         # 🔥 Deduplicate here
+#         cleaned_blueprint = deduplicate_segments(blueprint)
+#         print(f"✅ Architect created blueprint with {len(cleaned_blueprint)} unique segments "
+#               f"(from {len(blueprint)} total).")
+
+#         return cleaned_blueprint
+#         """
+
+#         print(f"✅ Architect created blueprint with {len(blueprint)} segments.")
+#         return blueprint

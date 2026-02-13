@@ -1,12 +1,8 @@
-import json
 import re
-from typing import List, Dict
-
-# TODO: need to update this file
 
 
 class QAParser:
-    def parse_qa_pairs(text: str) -> List[Dict]:
+    def parse_qa_pairs(self, text):
         """Robust QA pair parsing with validation"""
         qa_pairs = []
         lines = text.split("\n")
@@ -19,9 +15,10 @@ class QAParser:
         )
         answer_pattern = re.compile(r"^(?:answer|a\d*)[:\s]", re.IGNORECASE)
 
-        while i < len(lines):
+        while i < len(lines) and len(qa_pairs) < 20:
             line = lines[i].strip()
             question = None
+            print(line)
 
             # Match question line
             if question_pattern.match(line):
@@ -47,13 +44,14 @@ class QAParser:
                     while j < len(lines) and not question_pattern.match(
                         lines[j].strip()
                     ):
+                        # lines[j].strip().lower().startswith(("question", "q:")):
                         if lines[j].strip():  # Skip empty lines
                             answer_lines.append(lines[j].strip())
                         j += 1
                     break
                 j += 1
 
-            if question and answer_lines:
+            if answer_lines:
                 answer = " ".join(answer_lines)
                 qa_pairs.append({"question": question, "answer": answer})
                 i = j - 1  # Skip processed lines
@@ -67,28 +65,3 @@ class QAParser:
             print(f"ℹ️ Using first 20 of {len(qa_pairs)} QA pairs")
 
         return qa_pairs
-
-    def extract_json_from_response(response: str) -> List[Dict]:
-        """Robust JSON extraction from LLM response"""
-        try:
-            # First try to parse as pure JSON
-            return json.loads(response)
-        except json.JSONDecodeError:
-            # Try to extract JSON substring if wrapped
-            match = re.search(r"```json\n(.*?)\n```", response, re.DOTALL)
-            if match:
-                try:
-                    return json.loads(match.group(1))
-                except json.JSONDecodeError:
-                    pass
-
-            # Fallback: Find first/last braces
-            start_idx = response.find("[")
-            end_idx = response.rfind("]")
-            if start_idx != -1 and end_idx != -1:
-                try:
-                    return json.loads(response[start_idx : end_idx + 1])
-                except json.JSONDecodeError:
-                    pass
-
-        raise ValueError("Failed to extract valid JSON from response")

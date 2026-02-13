@@ -1,12 +1,11 @@
-import os
 import json
-from typing import List, Dict
+import os
 
 
 class FileHandler:
-    def get_transcript_file(self, file_name):
-        """Get transcript filename from flag or prompt"""
-        # file_name = str(file_name).strip()
+    def read_transcript(self, file_name):
+        """Read and validate transcript file"""
+
         if not os.path.exists(file_name) or not file_name.lower().endswith(".json"):
             raise ValueError(f"File {file_name} not found or not a .json file")
 
@@ -18,10 +17,9 @@ class FileHandler:
                 raise ValueError("Transcript JSON must be a list of segment objects.")
             return segments_json
 
-    def save_output(self, data: Dict, file_name: str, suffix: str) -> str:
-        """Save data to JSON file"""
-        base_name = os.path.splitext(file_name)[0]
+    def save_qa_pairs(self, qa_data, file_name, suffix):
+        """Save QA pairs to JSON file"""
         output_file = f"{suffix}.json"
         with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+            json.dump(qa_data, f, indent=2, ensure_ascii=False)
         return output_file

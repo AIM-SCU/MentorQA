@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 from typing import List, Dict
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).parent.parent))
 from common_utils import config
 from common_utils.gpu_utils import GPUMemoryMonitor
@@ -23,13 +24,12 @@ from processors.question_parser import QuestionParser
 _LANG_MAP = {
     "en": ("en", "English"),
     "cn": ("zh", "Chinese"),
-    "zh": ("zh", "Chinese"), 
+    "zh": ("zh", "Chinese"),
     "hi": ("hi", "Hindi"),
     "ro": ("ro", "Romanian"),
 }
-_LANG_SUFFIX_RE = re.compile(
-    r"-(cn|zh|en|hi|ro)(?:-|\.|$)", re.IGNORECASE
-)
+_LANG_SUFFIX_RE = re.compile(r"-(cn|zh|en|hi|ro)(?:-|\.|$)", re.IGNORECASE)
+
 
 class RAGPipeline:
     # helpfer functions to detect languages
@@ -45,7 +45,7 @@ class RAGPipeline:
             if key in _LANG_MAP:
                 return _LANG_MAP[key]
         return ("en", "English")
-    
+
     def set_global_language(self, iso_code: str, human_name: str):
         """
         Set global language in config and (optionally) environment for tools that read it.
@@ -55,21 +55,23 @@ class RAGPipeline:
         # Optional: also export to env if any subprocess/agent reads env
         os.environ["TRANSCRIPT_LANGUAGE_CODE"] = iso_code
         os.environ["TRANSCRIPT_LANGUAGE_NAME"] = human_name
-        
+
     def __init__(self, transcript_file=None):
         self.gpu_monitor = GPUMemoryMonitor()
         self.text_processor = TextProcessor()
         self.file_handler = FileHandler()
         self.chroma_manager = ChromaManager()
         self.model_handler = QwenModelHandler()
-        self.question_generator = QuestionGenerator(self.model_handler, QuestionParser())
+        self.question_generator = QuestionGenerator(
+            self.model_handler, QuestionParser()
+        )
         self.answer_synthesizer = AnswerSynthesizer(self.model_handler)
         self.transcript_file = transcript_file
 
     def run(self):
-        print("="*70)
+        print("=" * 70)
         print("TRUE RAG PIPELINE FOR QA EXTRACTION")
-        print("="*70)
+        print("=" * 70)
 
         # Initial GPU state
         print("\n[INITIAL GPU STATE]")
@@ -82,14 +84,15 @@ class RAGPipeline:
         else:
             file_name = input("\n📝 Enter transcript filename: ").strip()
         transcript = self.file_handler.get_transcript_file(file_name)
-        
+
         # Adding lang feautre
-        lang = self.detect_language_from_filename(file_name)    
+        lang = self.detect_language_from_filename(file_name)
         self.set_global_language(*lang)
-        print(f"🌐 Detected transcript language: {config.LANGUAGE_CODE} ({config.LANGUAGE_NAME})")
+        print(
+            f"🌐 Detected transcript language: {config.LANGUAGE_CODE} ({config.LANGUAGE_NAME})"
+        )
 
         try:
-
             if isinstance(transcript, str):
                 transcript = transcript.strip()
             elif isinstance(transcript, list):
@@ -105,7 +108,11 @@ class RAGPipeline:
                         parts.append(s)
                 transcript = " ".join(parts)
             elif isinstance(transcript, dict):
-                transcript = (transcript.get("text") or transcript.get("transcript") or str(transcript)).strip()
+                transcript = (
+                    transcript.get("text")
+                    or transcript.get("transcript")
+                    or str(transcript)
+                ).strip()
             else:
                 transcript = str(transcript).strip()
 
@@ -117,10 +124,10 @@ class RAGPipeline:
             print(f"ℹ️ Created {len(chunks)} chunks.")
 
             vectordb = self.chroma_manager.initialize_db(chunks)
-            print(f"✅ Vector DB created and saved")
+            print("✅ Vector DB created and saved")
             emb_end = time.time() - emb_start
-            print(f"\n Embedding time is {emb_end}") 
-            
+            print(f"\n Embedding time is {emb_end}")
+
             # Post-load GPU memory
             print("\n[EMBEDDING MODEL LOADED GPU STATE]")
             self.gpu_monitor.print_gpu_memory()
@@ -128,12 +135,14 @@ class RAGPipeline:
             # Phase 2: Question Generation
             print("\n--- PHASE 2: QUESTION GENERATION ---")
             self.model_handler.load_model()
-            
+
             # Query 1 running time
             q1_start = time.time()
-            potential_questions = self.question_generator.run_agent1_question_generation(transcript)
+            potential_questions = (
+                self.question_generator.run_agent1_question_generation(transcript)
+            )
             q1_end = time.time() - q1_start
-            
+
             # Post-load GPU memory
             print("\n[QWEN MODEL LOADED GPU STATE]")
             self.gpu_monitor.print_gpu_memory()
@@ -152,14 +161,16 @@ class RAGPipeline:
             final_qa_pairs = []
             # Query 2 time
             q2_start = time.time()
-            retriever = vectordb.as_retriever(search_kwargs={"k": 5}) # Retrieve top 5 chunks
+            retriever = vectordb.as_retriever(
+                search_kwargs={"k": 5}
+            )  # Retrieve top 5 chunks
 
             for i, question in enumerate(potential_questions):
                 if len(final_qa_pairs) >= 20:
                     print("\nℹ️ Reached target of 20 QA pairs. Stopping.")
                     break
 
-                print(f"\nProcessing Q{i+1}/{len(potential_questions)}: {question}")
+                print(f"\nProcessing Q{i + 1}/{len(potential_questions)}: {question}")
 
                 # Step 1: Retrieve relevant chunks
                 print("  🔍 Retrieving relevant context...")
@@ -168,7 +179,9 @@ class RAGPipeline:
 
                 # Step 2: Generate answer based on context
                 print("  ✍️ Synthesizing answer...")
-                qa_pair = self.answer_synthesizer.run_agent2_answer_synthesis(question, context_chunks)
+                qa_pair = self.answer_synthesizer.run_agent2_answer_synthesis(
+                    question, context_chunks
+                )
 
                 if qa_pair:
                     final_qa_pairs.append(qa_pair)
@@ -176,46 +189,51 @@ class RAGPipeline:
                 else:
                     print("  ⚠️ Answer could not be synthesized from context.")
             q2_end = time.time() - q2_start
-            
+
             # return the time to run.py
             total_time = emb_end + q1_end + q2_end
             print(json.dumps({"agent_seconds": total_time}), flush=True)
-            
+
             # ===== 4. SAVE RESULTS =====
             print("\n--- PHASE 4: SAVING RESULTS ---")
-            output_file = self.file_handler.save_results(final_qa_pairs, file_name, "finalQA")
+            output_file = self.file_handler.save_results(
+                final_qa_pairs, file_name, "finalQA"
+            )
             print(f"\n🎉 Successfully generated {len(final_qa_pairs)} QA pairs.")
             print(f"💾 Output saved to: {output_file}")
 
         finally:
             # Cleanup
             self.model_handler.unload_model()
-            #self.question_generator.unload_model()
-            #self.answer_synthesizer.unload_model()
-            if 'vectordb' in locals():
+            # self.question_generator.unload_model()
+            # self.answer_synthesizer.unload_model()
+            if "vectordb" in locals():
                 del vectordb
 
             # The ChromaDB directory is NO LONGER deleted here, so it will persist.
             print("\n[GPU STATE AFTER CLEANUP]")
             self.gpu_monitor.print_gpu_memory()
 
+
 def get_args():
     parser = argparse.ArgumentParser(description="True RAG Pipeline for QA Extraction")
     parser.add_argument(
         "--id",
         type=int,
-        help="Transcript ID (if provided, transcript file will be loaded from predefined path)"
+        help="Transcript ID (if provided, transcript file will be loaded from predefined path)",
     )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = get_args()
-    
+
     transcript_file = None
     # searching for transcript files
     if args.id is not None:
-        transcript_dir = Path(__file__).resolve().parent.parent / f"Master/{args.id}/Transcript"
+        transcript_dir = (
+            Path(__file__).resolve().parent.parent / f"Master/{args.id}/Transcript"
+        )
         print(f"Looking for transcripts in: {transcript_dir}")
         # Look for both transcript_*.json and transcript-*.json patterns
         matches = list(transcript_dir.glob("transcript*.json"))
@@ -226,6 +244,7 @@ if __name__ == "__main__":
         else:
             print(f"No transcript files found in {transcript_dir}")
 
-    pipeline = RAGPipeline(transcript_file=str(transcript_file) if transcript_file else None)
+    pipeline = RAGPipeline(
+        transcript_file=str(transcript_file) if transcript_file else None
+    )
     pipeline.run()
-

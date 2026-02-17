@@ -34,7 +34,7 @@ The video links and generated QA pairs can be accessed here:
 If you find this work helpful, please consider citing:
 
 ```bibtex
-@article{bhalerao2025mentorqa,
+@article{bhalerao2026mentorqa,
   title={Beyond Factual QA: Mentorship-Oriented Question Answering over Long-Form Multilingual Content},
   author={Bhalerao, Parth and Dsouza, Diola and Guan, Ruiwen and Ignat, Oana},
   journal={arXiv preprint arXiv:2601.17173},

@@ -54,7 +54,7 @@ MentorQA/
 
 ## ⚙️ Installation
 
-### 1. Clone the repository:
+<!--### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/AIM-SCU/MentorQA.git
@@ -66,7 +66,7 @@ cd MentorQA
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
-```
+```-->
 
 ### 3. Install Core Dependencies:
 Our pipeline utilizes the following open-weights models. Ensure your environment has enough VRAM/RAM to support them: 
@@ -130,7 +130,7 @@ Master/
 ```
 Each approach you enable (e.g., `SingleAgent`, `RAG`, `DualAgent`) will generate its own dedicated folder alongside `MultiAgent-LLMChunking/` containing its respective `finalQA.json` and intermediate files.
 
-## 📝 Citation
+<!--## 📝 Citation
 If you use our code, the MentorQA dataset, or find our work helpful in your research, please cite our paper:
 
 ```bibtex
@@ -144,7 +144,7 @@ If you use our code, the MentorQA dataset, or find our work helpful in your rese
 
 ## 📝 License
 
-MIT License
+MIT License-->
 
 
 

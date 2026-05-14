@@ -1,13 +1,13 @@
 # Beyond Factual QA: Mentorship-Oriented Question Answering from Long-Form Multilingual Content
 
-[![Paper](https://img.shields.io/badge/Paper-ArXiv-red.svg)](https://arxiv.org/abs/2601.17173) 
-[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/AIM-SCU/MentorQA) 
+<!--[![Paper](https://img.shields.io/badge/Paper-ArXiv-red.svg)](https://arxiv.org/abs/2601.17173) 
+[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/AIM-SCU/MentorQA) -->
 
 This repository contains the dataset and code for our paper: 
 
 **Beyond Factual QA: Mentorship-Oriented Question Answering from Long-Form Multilingual Content**.
 
-📄 **Preprint:** [https://arxiv.org/pdf/2601.17173](https://arxiv.org/pdf/2601.17173)
+<!--📄 **Preprint:** [https://arxiv.org/pdf/2601.17173](https://arxiv.org/pdf/2601.17173)-->
 
 <p align="center">
   <img src="architecture.jpg" alt="Mentorship Overview" width="30%">
@@ -29,9 +29,11 @@ This project shows that our multi-agent QA systems produce significantly more ef
 
 ## 📊 Dataset
 
-The MentorQA dataset contains the video links and generated QA pairs evaluated in our study. It can be accessed directly on HuggingFace:
+The Anonymized Dataset is provided with both LLM Evaluations and Human Annotations.
 
-🔗 **[https://huggingface.co/datasets/AIM-SCU/MentorQA](https://huggingface.co/datasets/AIM-SCU/MentorQA)**
+<!--The MentorQA dataset contains the video links and generated QA pairs evaluated in our study. It can be accessed directly on HuggingFace:
+
+🔗 **[https://huggingface.co/datasets/AIM-SCU/MentorQA](https://huggingface.co/datasets/AIM-SCU/MentorQA)**-->
 
 ---
 

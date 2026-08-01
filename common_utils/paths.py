@@ -8,8 +8,10 @@ memory_root = Path(__file__).parent.parent
 gpu_memory_path = memory_root / "common_utils"
 
 # Model paths
-qwen_model_path = project_root / "Qwen2.5-7B-Instruct-1M"
+# Here using the absolute path on WAVE HPC
+# Feel free to change it running locally
+qwen_model_path = "/WAVE/datasets/oignat_lab/QWEN3.5_9B"
 bge_model_path = project_root / "BGE-M3"
 
-#project_root = os.path.dirname(os.path.abspath(__file__))
-#model_path = os.path.join(project_root, "Qwen model is here")
+# project_root = os.path.dirname(os.path.abspath(__file__))
+# model_path = os.path.join(project_root, "Qwen model is here")

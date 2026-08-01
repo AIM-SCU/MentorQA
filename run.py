@@ -96,6 +96,12 @@ def run_preprocessing(
         subprocess.run(cmd, check=True)
 
 
+def find_existing_transcript(transcript_dir: Path) -> Optional[Path]:
+    """Return a repository-format transcript JSON file, if one is available."""
+    transcripts = sorted(transcript_dir.glob("transcript*.json"))
+    return transcripts[0] if transcripts else None
+
+
 def run_approach(
     idx: int,
     approach_id: int,
@@ -294,11 +300,19 @@ def main():
         "--app",
         nargs="*",
         type=int,
-        default=[1, 2, 3, 4, 5, 6],
-        help="Run these approachs (default: 1 2 3 4 5 6)",
+        default=[1, 2, 3, 4],
+        help="Run these approachs (default: 1 2 3 4)",
     )
     p.add_argument(
         "--start", type=int, default=None, help="Start from this video index"
+    )
+    p.add_argument(
+        "--preprocess",
+        action="store_true",
+        help=(
+            "Download audio and run Whisper before the QA approaches. By default, "
+            "existing files in Master/<index>/Transcript/ are used directly."
+        ),
     )
     p.add_argument(
         "--dry-run", action="store_true", help="Print commands, don’t execute"
@@ -327,14 +341,25 @@ def main():
             print(f"\n===== Video {idx} Language: {lang} =====")
             root = build_video_root(base, idx, lang)
 
-            # Step 1: pre-processing (audio/transcript)
-            run_preprocessing(
-                url=url,
-                audio_dir=root / "Audio",
-                transcript_dir=root / "Transcript",
-                lang=lang,
-                dry_run=args.dry_run,
-            )
+            transcript_dir = root / "Transcript"
+            if args.preprocess:
+                # Explicit opt-in: download audio and create a Whisper transcript.
+                run_preprocessing(
+                    url=url,
+                    audio_dir=root / "Audio",
+                    transcript_dir=transcript_dir,
+                    lang=lang,
+                    dry_run=args.dry_run,
+                )
+            else:
+                transcript_file = find_existing_transcript(transcript_dir)
+                if transcript_file is None:
+                    print(
+                        "⚠️ No transcript found. Run download_transcripts.py first, "
+                        "or pass --preprocess to download audio and run Whisper."
+                    )
+                    continue
+                print(f"📄 Using existing transcript: {transcript_file}")
 
             # Step 2: each approach for this video
             # process the id to each main so that they can know the file

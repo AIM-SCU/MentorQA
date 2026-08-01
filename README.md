@@ -43,11 +43,12 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-### Option B: venv and pip
-
+### Option B: using venv and pip on HPC
+If want to set up using HPC:
 ```bash
-python3.10 -m venv .venv
-source .venv/bin/activate
+module load Anaconda3
+python -m venv .mvenv
+source .mvenv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
@@ -68,7 +69,7 @@ installing the remaining requirements.
 
 Download local snapshots of the following models:
 
-- [Qwen2.5-7B-Instruct-1M](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M)
+- [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)
 - [BGE-M3](https://huggingface.co/BAAI/bge-m3)
 - [Whisper large-v3](https://huggingface.co/openai/whisper-large-v3)
 
@@ -78,7 +79,7 @@ directories beside the repository:
 ```text
 parent-directory/
 ├── MedicalQA/
-├── Qwen2.5-7B-Instruct-1M/
+├── Qwen3.5-9B/
 └── BGE-M3/
 ```
 
@@ -105,13 +106,37 @@ Preview the work without downloading videos or loading models:
 python run.py --v videos.csv --dry-run
 ```
 
-Run all approaches for every video:
+### Download existing YouTube captions
+
+If a video already has YouTube captions, download them directly instead of
+running Whisper. This downloads no audio and converts the caption track to the
+JSON format expected by the QA pipelines:
 
 ```bash
-python run.py --v videos.csv
+python download_transcripts.py --csv test_dataset.csv
 ```
 
-Run one approach for every video:
+The script writes each transcript to `Master/<index>/Transcript/` and requests
+both author-provided subtitles and automatic captions. Use `--only 10` to
+process one video, `--overwrite` to replace an existing transcript, or
+`--dry-run` to review the output paths first.
+
+Run the QA approaches using the transcripts already in
+`Master/<index>/Transcript/`:
+
+```bash
+python run.py --v test_dataset.csv
+```
+
+`run.py` does not download audio or run Whisper by default. If a transcript is
+missing, it skips that video and explains how to add one. To explicitly use the
+audio/Whisper preprocessing path instead, add `--preprocess`:
+
+```bash
+python run.py --v videos.csv --preprocess
+```
+
+Run one approach (approach 3 in this case, which is Multi-agent) for every video:
 
 ```bash
 python run.py --v videos.csv --app 3
@@ -122,6 +147,9 @@ Run the RAG approach for one video index:
 ```bash
 python run.py --v videos.csv --only 2 --app 4
 ```
+
+Approach 4 (RAG) builds a BGE-M3 vector index from the existing transcript.
+Use `--app 1 2 3` if you do not want to load BGE-M3.
 
 Approach IDs are:
 

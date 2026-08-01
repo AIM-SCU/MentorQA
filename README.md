@@ -17,7 +17,6 @@ of these approaches.
   version. Python 3.10 is the conservative choice for the PyTorch, Whisper,
   Transformers, and LangChain dependencies used here. Use Python 3.10 rather
   than the system Python where possible.
-- **FFmpeg**, available on your `PATH`, for converting downloaded audio.
 - **An NVIDIA GPU with CUDA** is strongly recommended for model inference. The
   RAG embedding pipeline currently initializes its embedding model on CUDA.
 - Local copies of the Qwen, BGE-M3, and Whisper model weights (see
@@ -53,12 +52,6 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Install FFmpeg with your operating system's package manager. For example, on
-macOS with Homebrew:
-
-```bash
-brew install ffmpeg
-```
 
 PyTorch must match the CUDA version installed on the machine. If the default
 PyPI PyTorch build is unsuitable, install the appropriate build using the
@@ -99,11 +92,12 @@ index,url,language
 1,https://youtube.com/watch?v=example1,English
 2,https://youtube.com/watch?v=example2,Chinese
 ```
+Right now using test_dataset.csv.
 
 Preview the work without downloading videos or loading models:
 
 ```bash
-python run.py --v videos.csv --dry-run
+python run.py --v test_dataset.csv --dry-run
 ```
 
 ### Download existing YouTube captions
@@ -121,11 +115,17 @@ both author-provided subtitles and automatic captions. Use `--only 10` to
 process one video, `--overwrite` to replace an existing transcript, or
 `--dry-run` to review the output paths first.
 
-Run the QA approaches using the transcripts already in
-`Master/<index>/Transcript/`:
+## Run the QA approaches :
 
+Run every approaches using the transcripts already in `Master/<index>/Transcript/`
 ```bash
 python run.py --v test_dataset.csv
+```
+
+Run one approach (approach 3 in this case, which is Multi-agent) for every video:
+
+```bash
+python run.py --v test_dataset.csv --app 3
 ```
 
 `run.py` does not download audio or run Whisper by default. If a transcript is
@@ -136,11 +136,6 @@ audio/Whisper preprocessing path instead, add `--preprocess`:
 python run.py --v videos.csv --preprocess
 ```
 
-Run one approach (approach 3 in this case, which is Multi-agent) for every video:
-
-```bash
-python run.py --v videos.csv --app 3
-```
 
 Run the RAG approach for one video index:
 

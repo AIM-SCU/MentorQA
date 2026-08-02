@@ -24,17 +24,17 @@ class Settings:
         ).format(name=lang_name)
 
         # Build prompt
-        system_prompt = (f"You are a {lang_name} expert content analyst. Your task is to read a long transcript and identify potential questions that cover the most important educational and mentorship value."
+        system_prompt = (f"You are a {lang_name} expert content analyst. Your task is to read a long transcript and identify potential questions that cover the most important educational value on dementia."
                     f"{lang_guard}"
                     )
 
-        prompt = f"""Read the following transcript carefully and identify the 20 most important questions in {lang_name} providing only educational and mentorship value from this transcript segment. For each question:
+        prompt = f"""Read the following transcript carefully and identify the 20 most important questions in {lang_name} providing only educational value from this transcript segment. For each question:
 
         1. Ensure the question captures a key concept or important information from the transcript
         2. Provide a clear, accurate answer to the question based only on information in the transcript
         3. Make sure questions and answers cover different aspects of the content the whole transcript and don't overlap significantly
         4. Select questions and answers in a balanced way from throughout the entire content, not concentrating too heavily on any single section or part
-        5. Answers should be in proper detail length and include only the relevant information answering the question properly with educational/mentorship value.
+        5. Answers should be in proper detail length and include only the relevant information answering the question properly with educational value.
         6. Avoid trivial or overly specific questions.
         7. Use the same Language as of the original content. 
 

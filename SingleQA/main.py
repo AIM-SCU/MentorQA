@@ -62,7 +62,7 @@ class QAExtractor:
     def run(self):
         # Initialize
         print("="*70)
-        print("QA EXTRACTION AGENT - Qwen2.5-7B-Instruct-1M")
+        print("QA EXTRACTION AGENT - Qwen3.5-9B")
         print("="*70)
 
         # Initial GPU memory

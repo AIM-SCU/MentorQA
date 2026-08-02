@@ -79,9 +79,7 @@ class QAModel:
             {"role": "user", "content": prompt},
         ]
 
-        text = self.tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
+        text = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True, enable_thinking=False,)
 
         # Tokenize and move to GPU
         inputs = self.tokenizer(text, return_tensors="pt").to(self.model.device)

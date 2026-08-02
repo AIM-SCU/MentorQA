@@ -1,0 +1,182 @@
+[
+  {
+    "question": "What is the primary focus of understanding the condition of dementia?",
+    "answer": "The primary focus is to understand what is happening within the brain when a person is living with the changes associated with dementia, specifically examining what exists in the brain and what processes are occurring there.",
+    "topic": "Introduction to Brain Function",
+    "time_start_sec": 6.306,
+    "time_end_sec": 18.852,
+    "time_start_hhmmss": "00:00:06",
+    "time_end_hhmmss": "00:00:19"
+  },
+  {
+    "question": "Why is it important for individuals or caregivers to understand the internal brain activity related to dementia?",
+    "answer": "It is crucial to understand these internal changes because knowing what is present in the brain and what is actively happening there provides necessary context for the condition known as dementia.",
+    "topic": "Introduction to Brain Function",
+    "time_start_sec": 6.306,
+    "time_end_sec": 18.852,
+    "time_start_hhmmss": "00:00:06",
+    "time_end_hhmmss": "00:00:19"
+  },
+  {
+    "question": "What is the primary function of the limbic system and why is it considered the foundation of human survival?",
+    "answer": "The limbic system is the first system to develop in the brain and serves as the core mechanism for \"thrive to survive.\" Its primary functions include regulating essential biological needs such as hunger, thirst, elimination, sleep, and temperature control. Furthermore, it houses the amygdala, which allows individuals to recognize threats and trigger immediate responses categorized as fight (driving towards a goal), flight (getting away from danger), or fright (reacting to scary situations).",
+    "topic": "The Limbic System Overview",
+    "time_start_sec": 19.285,
+    "time_end_sec": 99.099,
+    "time_start_hhmmss": "00:00:19",
+    "time_end_hhmmss": "00:01:39"
+  },
+  {
+    "question": "How does the developmental timeline of the limbic system relate to its resilience in cases of dementia?",
+    "answer": "Because the limbic system is the oldest part of the brain, having developed first, it is also the most preserved structure over time. In most cases of dementia, this area remains intact until the very end stages of the disease, whereas other parts of the brain may suffer damage earlier. This indicates that the core survival instincts and emotional processing capabilities managed by the limbic system are among the last neurological functions to deteriorate.",
+    "topic": "The Limbic System Overview",
+    "time_start_sec": 19.285,
+    "time_end_sec": 99.099,
+    "time_start_hhmmss": "00:00:19",
+    "time_end_hhmmss": "00:01:39"
+  },
+  {
+    "question": "What is the developmental timeline for the frontal prefrontal cortex and how does its maturation impact an individual's ability to control impulses?",
+    "answer": "The frontal prefrontal cortex, located at the front of the brain, is the newest part that develops later than other areas. It does not reach full maturity until the late twenties or early thirties, often taking longer in males than in females. Until this maturation occurs, the drive center operates with less control. Once mature, this region enables critical functions such as delaying gratification, prioritizing long-term positive outcomes over temporary desires, and inhibiting actions that could lead to negative consequences like losing a job.",
+    "topic": "Frontal Lobe Development and Control",
+    "time_start_sec": 99.099,
+    "time_end_sec": 183.64999999999998,
+    "time_start_hhmmss": "00:01:39",
+    "time_end_hhmmss": "00:03:04"
+  },
+  {
+    "question": "Beyond impulse control, what are the two other primary functions of the front part of the brain regarding decision-making and social interaction?",
+    "answer": "The second function of the frontal prefrontal cortex is the capacity to think things through, evaluate all available options, and make deliberate choices based on whether they align with long-term goals. The third function, which develops last and requires significant practice, is the ability to see things from another person's point of view. This involves moving beyond one's own perspective to genuinely consider where the other person stands, a skill that not everyone masters fully.",
+    "topic": "Frontal Lobe Development and Control",
+    "time_start_sec": 99.099,
+    "time_end_sec": 183.64999999999998,
+    "time_start_hhmmss": "00:01:39",
+    "time_end_hhmmss": "00:03:04"
+  },
+  {
+    "question": "What are the primary behavioral and cognitive challenges individuals face due to early impairment in the brain's emotional and impulse-control centers during dementia?",
+    "answer": "When the core part of the brain responsible for the \"flight, fight, fright\" response and emotion regulation is damaged early in the disease, individuals struggle to control their impulses. This leads to acting out behaviors that may seem wrong to others, expressing dislike in a nasty manner despite having no prior history of such behavior, and an inability to make logical, reasonable decisions or view situations from another person's perspective.",
+    "topic": "Impact of Dementia on Core Functions",
+    "time_start_sec": 184.617,
+    "time_end_sec": 240.47299999999998,
+    "time_start_hhmmss": "00:03:05",
+    "time_end_hhmmss": "00:04:00"
+  },
+  {
+    "question": "How does the progression of dementia affect the relative functionality of the brain's emotional center compared to other parts over time?",
+    "answer": "From the very beginning of the disease, the part of the brain governing emotions and impulses becomes much more impaired than other areas. While the extent of these symptoms can vary, ranging from minor to extreme depending on the type of dementia, this specific region suffers significant damage earlier in the course of the illness compared to other brain functions.",
+    "topic": "Impact of Dementia on Core Functions",
+    "time_start_sec": 184.617,
+    "time_end_sec": 240.47299999999998,
+    "time_start_hhmmss": "00:03:05",
+    "time_end_hhmmss": "00:04:00"
+  },
+  {
+    "question": "What is the primary function of the majority of the brain described in this segment?",
+    "answer": "The main purpose of the rest of the brain is to serve as a sensory processing system designed to receive information so it can be utilized by the individual.",
+    "topic": "Sensory Processing Systems Explained",
+    "time_start_sec": 241.441,
+    "time_end_sec": 351.05,
+    "time_start_hhmmss": "00:04:01",
+    "time_end_hhmmss": "00:05:51"
+  },
+  {
+    "question": "How does the brain prioritize the processing of smell and taste compared to other senses like sight and hearing?",
+    "answer": "Smell and taste are considered primitive and basic functions that route directly into the limbic system. This prioritization is linked to immediate safety awareness, allowing the brain to quickly reject bad tastes or avoid unpleasant odors before higher-level cognitive processing occurs.",
+    "topic": "Sensory Processing Systems Explained",
+    "time_start_sec": 241.441,
+    "time_end_sec": 351.05,
+    "time_start_hhmmss": "00:04:01",
+    "time_end_hhmmss": "00:05:51"
+  },
+  {
+    "question": "How does the progression of dementia specifically alter a person's visual field and spatial awareness?",
+    "answer": "In the early stages of dementia, while center field vision (curiosity and problem-solving) remains relatively preserved, edge vision deteriorates, causing the individual's perceived world to shrink. By the mid-stages, the visual field narrows significantly, resembling looking through binoculars, which prevents the ability to process multiple details simultaneously, such as looking down while moving forward. In later stages, the brain loses the capacity to align images from both eyes to create a 3D perception, forcing a choice between double vision or losing depth entirely. This loss of depth perception makes judging distances impossible, leading to behaviors like running hands along furniture edges or missing objects when setting them down, not due to a lack of effort, but because critical visual data is no longer being processed correctly.",
+    "topic": "Vision Changes in Dementia Stages",
+    "time_start_sec": 351.05,
+    "time_end_sec": 502.60200000000003,
+    "time_start_hhmmss": "00:05:51",
+    "time_end_hhmmss": "00:08:23"
+  },
+  {
+    "question": "Why do individuals with dementia often misinterpret non-threatening physical contact as an attack, and how does this affect their interactions with caregivers?",
+    "answer": "Because the disease damages the brain's ability to monitor peripheral vision and safety awareness, individuals lose the capacity to detect people approaching from the sides or behind them. When someone touches their shoulder or leans in unexpectedly, the person with dementia cannot visually locate the source of the stimulus before reacting. Consequently, they perceive the action as sudden and aggressive, triggering a strong defensive reaction. Caregivers must understand that these intense reactions are not intentional hostility but are caused by the inability to gather and process visual data about the surroundings, meaning the person feels threatened even when no danger exists.",
+    "topic": "Vision Changes in Dementia Stages",
+    "time_start_sec": 351.05,
+    "time_end_sec": 502.60200000000003,
+    "time_start_hhmmss": "00:05:51",
+    "time_end_hhmmss": "00:08:23"
+  },
+  {
+    "question": "How does the asymmetrical nature of brain damage in dementia explain why a person might retain social conversation while losing their ability to form new sentences?",
+    "answer": "In approximately 98% of humans, formal language skills such as vocabulary, comprehension, and speech production are located in the left hemisphere of the brain. Most dementias attack this left side more aggressively than the right. As the disease progresses, patients lose the ability to retrieve specific nouns and construct sentences, often dropping words they used to know. However, they frequently retain the capacity for \"automatic social chit-chat,\" which creates a misleading impression that they are still fully processing and understanding conversations. This phenomenon occurs because the automatic, rhythmic, and conversational patterns stored in the right hemisphere remain intact even when the formal linguistic structures in the left hemisphere fail.",
+    "topic": "Auditory Processing and Language Loss",
+    "time_start_sec": 503.202,
+    "time_end_sec": 626.993,
+    "time_start_hhmmss": "00:08:23",
+    "time_end_hhmmss": "00:10:27"
+  },
+  {
+    "question": "Why are music, rhythm, and certain emotional expressions often preserved in individuals with dementia, and how should care partners respond to the emergence of previously inappropriate language?",
+    "answer": "The right hemisphere of the brain, which processes rhythm, music, poetry, and prayer, is often spared by dementia attacks that target the left side. Consequently, individuals who can no longer speak in full sentences can still sing familiar songs, move rhythmically (such as dancing or clapping), and access automatic emotional responses. Additionally, the right hemisphere stores \"forbidden words\" like swear words, sexual references, and racial slurs from early childhood. When these words surface unexpectedly, it is not due to intentional malice but rather because the patient has retained the skill of using them while losing the filter provided by damaged left-brain logic. Care partners should understand that the person is doing their best with remaining abilities and must let go of trying to stop these behaviors, recognizing them as preserved skills rather than signs of lost humanity.",
+    "topic": "Auditory Processing and Language Loss",
+    "time_start_sec": 503.202,
+    "time_end_sec": 626.993,
+    "time_start_hhmmss": "00:08:23",
+    "time_end_hhmmss": "00:10:27"
+  },
+  {
+    "question": "How does the interaction between curiosity and safety awareness affect an individual's ability to process sensory information in their body?",
+    "answer": "The transcript explains that while individuals may retain the ability to feel things all over their body and act on them, a lack of safety awareness can undermine their skill. Specifically, if a person is curious about textures and temperatures but is not safety-aware, they struggle to pick up on subtle sensations. This imbalance causes safety to become an issue quickly, meaning the person might not realize how things actually feel until it is too late, disrupting the flow of sensing and responding.",
+    "topic": "Tactile Sensation and Safety Awareness",
+    "time_start_sec": 626.993,
+    "time_end_sec": 695.261,
+    "time_start_hhmmss": "00:10:27",
+    "time_end_hhmmss": "00:11:35"
+  },
+  {
+    "question": "What is the physical progression of the brain affected by dementia regarding size and function, despite the apparent ability of the person to perform tasks?",
+    "answer": "Although many dementias do not start in the specific areas responsible for sensation (input) and movement (output), the disease eventually involves these regions. The physical progression is dramatic; it is estimated that the brain shrinks from its full size to approximately one-third of its original size. Despite this massive reduction in brain tissue, it remains amazing that the person with dementia can still manage to perform daily activities and interactions.",
+    "topic": "Tactile Sensation and Safety Awareness",
+    "time_start_sec": 626.993,
+    "time_end_sec": 695.261,
+    "time_start_hhmmss": "00:10:27",
+    "time_end_hhmmss": "00:11:35"
+  },
+  {
+    "question": "Why is understanding the dynamic nature of brain chemistry essential for comprehending the challenges faced by individuals with dementia?",
+    "answer": "Understanding brain chemistry is critical because the chemical environment in the brain changes constantly, even within seconds, which directly dictates the ability to perform tasks and send neural impulses. In the context of dementia, these chemical fluctuations mean that capabilities can vary moment to moment; something a person could do five minutes prior might become impossible immediately after simply due to a lack of necessary chemistry. Recognizing this fluidity helps explain why cognitive performance is not static and underscores the importance of addressing these underlying chemical shifts rather than focusing solely on structural brain changes.",
+    "topic": "Structural and Chemical Brain Changes",
+    "time_start_sec": 696.195,
+    "time_end_sec": 771.504,
+    "time_start_hhmmss": "00:11:36",
+    "time_end_hhmmss": "00:12:52"
+  },
+  {
+    "question": "How does dementia differentially affect various types of memory, specifically regarding long-term, new learning, and emotional memories?",
+    "answer": "Dementia impacts memory types unevenly, often causing a loss of one type while sparing another. While some individuals retain their ability to recall old information but struggle with new learning, others face difficulties with both. Long-term memory and emotional memory are stored in the hippocampal area, which handles both new learning and the retention of past experiences. A key distinction highlighted is that despite the loss of other memory functions, emotional memory tends to be preserved in many cases of dementia, allowing individuals to maintain connections to feelings and experiences even when factual recall fails.",
+    "topic": "Structural and Chemical Brain Changes",
+    "time_start_sec": 696.195,
+    "time_end_sec": 771.504,
+    "time_start_hhmmss": "00:11:36",
+    "time_end_hhmmss": "00:12:52"
+  },
+  {
+    "question": "What is the underlying cause of sudden behavioral changes in individuals with dementia?",
+    "answer": "The sudden behavioral changes, such as becoming angry without a clear reason, are caused by structural and chemical changes occurring within the brain. These physical alterations mean that the person does not have a conscious choice over their actions; instead, their behavior is dictated by how their brain is functioning at that moment.",
+    "topic": "Emotional Memory Preservation",
+    "time_start_sec": 772.271,
+    "time_end_sec": 806.2379999999999,
+    "time_start_hhmmss": "00:12:52",
+    "time_end_hhmmss": "00:13:26"
+  },
+  {
+    "question": "How can recognizing brain changes empower caregivers to improve their relationship with someone suffering from dementia?",
+    "answer": "Understanding that the patient's lack of control is due to brain pathology allows the caregiver to realize that the \"front of the brain\" remains active enough to facilitate new choices. By consciously making different decisions and taking different actions in response to these changes, the caregiver can positively alter the dynamic and improve the situation for both themselves and the person with dementia.",
+    "topic": "Emotional Memory Preservation",
+    "time_start_sec": 772.271,
+    "time_end_sec": 806.2379999999999,
+    "time_start_hhmmss": "00:12:52",
+    "time_end_hhmmss": "00:13:26"
+  }
+]

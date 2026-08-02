@@ -1,0 +1,182 @@
+[
+  {
+    "question": "What is the proposed initial action for the meeting?",
+    "answer": "The proposed initial action is to start with a plan introduction.",
+    "topic": "Introduction to Daily Live Session",
+    "time_start_sec": 2.659,
+    "time_end_sec": 29.25,
+    "time_start_hhmmss": "00:00:03",
+    "time_end_hhmmss": "00:00:29"
+  },
+  {
+    "question": "What is the decision regarding the meeting format?",
+    "answer": "The decision is to proceed with the meeting in a live session.",
+    "topic": "Introduction to Daily Live Session",
+    "time_start_sec": 2.659,
+    "time_end_sec": 29.25,
+    "time_start_hhmmss": "00:00:03",
+    "time_end_hhmmss": "00:00:29"
+  },
+  {
+    "question": "What is the immediate next step agreed upon by the group?",
+    "answer": "The immediate next step is to begin the session (\"kick it into gear\").",
+    "topic": "Introduction to Daily Live Session",
+    "time_start_sec": 2.659,
+    "time_end_sec": 29.25,
+    "time_start_hhmmss": "00:00:03",
+    "time_end_hhmmss": "00:00:29"
+  },
+  {
+    "question": "What is the developmental timeline and biological significance of the prefrontal cortex regarding its vulnerability in dementia?",
+    "answer": "The prefrontal cortex, located in the forehead area, is biologically significant because it is the last brain region to develop and the first to deteriorate in many dimensions. Scientifically, most women fully develop this area in their late 20s to mid-20s, while men typically develop it slightly later, reaching full development by their early 30s. Its status as the final maturing region makes it particularly susceptible to damage in conditions like Alzheimer's, which explains why cognitive functions managed by this area are often among the first to decline.",
+    "topic": "Understanding Dementia and Brain Changes",
+    "time_start_sec": 26.91,
+    "time_end_sec": 144.06900000000002,
+    "time_start_hhmmss": "00:00:27",
+    "time_end_hhmmss": "00:02:24"
+  },
+  {
+    "question": "How does the physical structure of brain wiring differ between a healthy brain and one affected by a decade-long diagnosis of Alzheimer's?",
+    "answer": "In a healthy brain, such as one lost due to an accident, there is extensive white matter and dense wiring connections across the brain. In contrast, an autopsy of a brain living with Alzheimer's for 10 years reveals significantly damaged wiring, particularly in the frontal regions. This loss of white matter connections represents a major structural change that distinguishes the compromised brain from a healthy one, directly impacting how signals travel within the nervous system.",
+    "topic": "Understanding Dementia and Brain Changes",
+    "time_start_sec": 26.91,
+    "time_end_sec": 144.06900000000002,
+    "time_start_hhmmss": "00:00:27",
+    "time_end_hhmmss": "00:02:24"
+  },
+  {
+    "question": "Why is the prefrontal cortex often described as a \"complicated thing\" that doesn't make sense when analyzing dementia symptoms?",
+    "answer": "The prefrontal cortex is described as complicated and seemingly nonsensical in the context of dementia because of the paradoxical timing of its lifecycle versus its decline. Since it is the last area to mature in adulthood (finishing in the early 30s), it holds the responsibility for complex executive functions. However, it is simultaneously the first area to suffer significant damage in neurodegenerative diseases like Alzheimer's. This combination of being the most recently developed center for high-level thinking and the earliest victim of disease creates a confusing dynamic where advanced cognitive abilities are stripped away before other brain regions show obvious signs of failure.",
+    "topic": "Understanding Dementia and Brain Changes",
+    "time_start_sec": 26.91,
+    "time_end_sec": 144.06900000000002,
+    "time_start_hhmmss": "00:00:27",
+    "time_end_hhmmss": "00:02:24"
+  },
+  {
+    "question": "What role does the prefrontal cortex play in managing impulse control and resisting immediate desires?",
+    "answer": "The prefrontal cortex is responsible for impulse control, acting as a regulatory mechanism against the \"inner primitive brain\" (amygdala) which urges immediate gratification. It allows an individual to recognize when an action, such as eating another cookie or buying an extra item, has reached a limit and decide to stop, effectively overriding the drive to do \"one more thing.\"",
+    "topic": "Prefrontal Cortex Functions Overview",
+    "time_start_sec": 141.19,
+    "time_end_sec": 405.54999999999995,
+    "time_start_hhmmss": "00:02:21",
+    "time_end_hhmmss": "00:06:46"
+  },
+  {
+    "question": "How does the prefrontal cortex facilitate the execution of tasks and transitions between activities?",
+    "answer": "This part of the brain manages the logical sequence of initiating, continuing, terminating, and moving on to new tasks. It breaks down complex actions, even simple ones like standing up or using the restroom, into specific steps (pulling feet back, leaning forward, pushing up). Furthermore, it enables the mental shift required to transition from one activity to another, such as stopping eating to take a drink of water, ensuring smooth progression through daily tasks.",
+    "topic": "Prefrontal Cortex Functions Overview",
+    "time_start_sec": 141.19,
+    "time_end_sec": 405.54999999999995,
+    "time_start_hhmmss": "00:02:21",
+    "time_end_hhmmss": "00:06:46"
+  },
+  {
+    "question": "In what ways does the prefrontal cortex influence decision-making capacity and social interaction?",
+    "answer": "The prefrontal cortex governs the ability to make choices, with a healthy brain typically capable of selecting from five to eight options, whereas conditions like dementia may reduce this capacity to just two choices or create an illusion of choice. Additionally, it supports self-awareness regarding one's own behavior and the ability to see situations from another person's perspective, allowing individuals to understand different viewpoints and integrate them with their own.",
+    "topic": "Prefrontal Cortex Functions Overview",
+    "time_start_sec": 141.19,
+    "time_end_sec": 405.54999999999995,
+    "time_start_hhmmss": "00:02:21",
+    "time_end_hhmmss": "00:06:46"
+  },
+  {
+    "question": "Why might a person with dementia appear unable to initiate an action, such as getting dressed or eating, even if they previously possessed the physical skills to do so?",
+    "answer": "The inability to initiate an action is often not a failure of a single skill but rather a combination of deficits. The individual may lack the logical or rational reasoning required to understand why an action is necessary at that moment, while simultaneously struggling with the executive function needed to start the action. This creates a situation where the person has the motor memories and physical capacity but cannot bridge the gap between understanding the need and executing the task.",
+    "topic": "Video Analysis of Woman Beating Chair",
+    "time_start_sec": 403.479,
+    "time_end_sec": 564.969,
+    "time_start_hhmmss": "00:06:43",
+    "time_end_hhmmss": "00:09:25"
+  },
+  {
+    "question": "What explains the phenomenon where a person with dementia can perform a task one day and then suddenly seems unable to do it the next, despite retaining some underlying abilities?",
+    "answer": "This sudden change occurs because dementia affects the \"wiring\" of the brain, specifically the connections between remaining skills and the ability to integrate them. While a person may still retain specific motor memories, vision, or vocabulary, they lose the neurological pathway that allows them to combine these isolated data points into a coherent, logical response. Consequently, a behavior that was automatic yesterday may fail today due to a temporary breakdown in these internal connections.",
+    "topic": "Video Analysis of Woman Beating Chair",
+    "time_start_sec": 403.479,
+    "time_end_sec": 564.969,
+    "time_start_hhmmss": "00:06:43",
+    "time_end_hhmmss": "00:09:25"
+  },
+  {
+    "question": "How does the progression of dementia influence which of the brain's six main functions become impaired at any given time?",
+    "answer": "The impairment of brain functions is dynamic and depends on several variables, including the specific type of dementia, the duration of the disease, and the rate at which other parts of the brain are declining. Because these six main functions operate as a system, the failure of one area can trigger or reveal failures in others. The onset and severity of these issues can fluctuate, meaning a person might regain a certain ability temporarily before a shift in brain activity causes those same functions to turn off again.",
+    "topic": "Video Analysis of Woman Beating Chair",
+    "time_start_sec": 403.479,
+    "time_end_sec": 564.969,
+    "time_start_hhmmss": "00:06:43",
+    "time_end_hhmmss": "00:09:25"
+  },
+  {
+    "question": "Why might a child persist in repetitive behavior for extended periods even when standard redirection techniques fail?",
+    "answer": "The child may lack impulse control, meaning their brain does not automatically signal \"stop\" after a certain duration. Additionally, they may be unable to shift from initiation mode to stopping and moving on, leading them to repeat the same action over and over. This persistence can also be influenced by physical factors such as muscle memory and accumulated fatigue, suggesting that the behavior makes internal sense within their current state even if it appears illogical to observers.",
+    "topic": "Connecting Dementia Symptoms to COVID-19",
+    "time_start_sec": 577.079,
+    "time_end_sec": 848.719,
+    "time_start_hhmmss": "00:09:37",
+    "time_end_hhmmss": "00:14:09"
+  },
+  {
+    "question": "How does the inability to adopt multiple perspectives contribute to conflict during challenging situations like the pandemic?",
+    "answer": "Conflict arises because individuals cannot reconcile their own logical conclusions with someone else's perspective. When people ask questions that reflect a reality that doesn't align with others (such as questioning safety measures) and then refuse to accept differing viewpoints, it leads to \"butting heads.\" The lack of multiple perspectives prevents understanding, causing parties to fight battles over whether a situation is dangerous or unnecessary rather than finding common ground.",
+    "topic": "Connecting Dementia Symptoms to COVID-19",
+    "time_start_sec": 577.079,
+    "time_end_sec": 848.719,
+    "time_start_hhmmss": "00:09:37",
+    "time_end_hhmmss": "00:14:09"
+  },
+  {
+    "question": "What is the underlying cause when a person continues a behavior that negatively affects others despite repeated attempts by staff to connect or redirect them?",
+    "answer": "The underlying cause is a disconnect between the individual's internal experience and the external expectations of others. While staff try to connect or redirect, the individual remains focused on their specific activity because they cannot perceive how it feels to others or understand why the action is problematic. This creates a scenario where the behavior continues for a long time because the person is stuck in a loop of initiation without the ability to stop or recognize that the action is not working for the environment.",
+    "topic": "Connecting Dementia Symptoms to COVID-19",
+    "time_start_sec": 577.079,
+    "time_end_sec": 848.719,
+    "time_start_hhmmss": "00:09:37",
+    "time_end_hhmmss": "00:14:09"
+  },
+  {
+    "question": "What is the recommended alternative to forcing a dog to stop unwanted behaviors like excessive barking?",
+    "answer": "Instead of trying to force the dog to quit the behavior, the trainer suggests using a \"substitution and positive approach.\" This involves offering the dog a trade, such as giving them a toy or a specific item to engage with, which redirects their attention and energy away from the annoyance.",
+    "topic": "Roleplay Demonstrating Substitution Strategy",
+    "time_start_sec": 860.519,
+    "time_end_sec": 996.32,
+    "time_start_hhmmss": "00:14:21",
+    "time_end_hhmmss": "00:16:36"
+  },
+  {
+    "question": "How does the concept of \"trade\" function in redirecting a dog's focus during training?",
+    "answer": "The \"trade\" functions by exchanging the current unwanted action for a desirable object or activity. By physically showing the dog a new item and encouraging them to take it, the trainer shifts the dog's focus from making noise or being difficult to engaging with the new object, effectively changing the behavior through redirection rather than suppression.",
+    "topic": "Roleplay Demonstrating Substitution Strategy",
+    "time_start_sec": 860.519,
+    "time_end_sec": 996.32,
+    "time_start_hhmmss": "00:14:21",
+    "time_end_hhmmss": "00:16:36"
+  },
+  {
+    "question": "Why is reinforcing specific behaviors and acknowledging effort important after successfully redirecting a dog?",
+    "answer": "Reinforcing the new behavior with verbal praise, such as saying \"that's good,\" helps solidify the connection between the desired action and positive feedback. Additionally, acknowledging the dog's hard work and character traits, like calling them a \"hard working woman,\" builds confidence and strengthens the bond, ensuring the dog feels appreciated for their effort in learning the new task.",
+    "topic": "Roleplay Demonstrating Substitution Strategy",
+    "time_start_sec": 860.519,
+    "time_end_sec": 996.32,
+    "time_start_hhmmss": "00:14:21",
+    "time_end_hhmmss": "00:16:36"
+  },
+  {
+    "question": "What is the recommended approach when a person expresses severe distress or confusion, such as believing they are in immediate danger, and why does attempting to argue with their logic often fail?",
+    "answer": "When facing statements of extreme distress or confusion, the recommended approach is to \"go with someone where they are\" by validating their feelings and joining them in the moment, rather than trying to change their perspective or prove them wrong. Arguing that a situation does not make sense often fails because it addresses the surface behavior without meeting the underlying need to terminate a current state and move forward. Instead of saying \"no no no,\" one should acknowledge the terror, reflect the distress back to the individual (e.g., \"This is really scary\"), and offer partnership (\"together we're gonna be okay\"), which helps the individual feel heard and supported without invalidating their experience.",
+    "topic": "Applying PAC Skills to Support Caregivers",
+    "time_start_sec": 992.87,
+    "time_end_sec": 1257.409,
+    "time_start_hhmmss": "00:16:33",
+    "time_end_hhmmss": "00:20:57"
+  },
+  {
+    "question": "How can an observer effectively reflect a person's emotional state to help them gain awareness and potentially shift their perspective, and what role does non-verbal communication play in this process?",
+    "answer": "Effective reflection involves accurately mirroring the individual's distress using both verbal and visual cues to demonstrate empathy and presence without lying or dismissing their fear. Verbal reflection uses the person's own words to help them articulate and slightly shift their view (e.g., acknowledging that while something is \"not good,\" it is manageable when faced together). Non-verbal communication is equally critical; observers should reflect emotions visually through body language and facial expressions, such as showing interest or surprise (\"whoa cool ace\"), which validates the person's internal state and fosters a connection that allows them to lower their guard and consider new directions.",
+    "topic": "Applying PAC Skills to Support Caregivers",
+    "time_start_sec": 992.87,
+    "time_end_sec": 1257.409,
+    "time_start_hhmmss": "00:16:33",
+    "time_end_hhmmss": "00:20:57"
+  }
+]

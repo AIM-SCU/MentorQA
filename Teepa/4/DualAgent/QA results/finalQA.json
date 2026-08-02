@@ -1,0 +1,182 @@
+[
+  {
+    "question": "What is the critical first step in distinguishing between normal aging and potential dementia?",
+    "answer": "The critical first step is to determine if the observed changes represent a deviation from what is normal for that specific individual rather than making immediate assumptions about dementia. One must verify if something is genuinely changing before concluding a diagnosis.",
+    "topic": "Distinguishing Normal Aging from Dementia",
+    "time_start_sec": 0.0,
+    "time_end_sec": 79.799,
+    "time_start_hhmmss": "00:00:00",
+    "time_end_hhmmss": "00:01:20"
+  },
+  {
+    "question": "Why is it essential to rule out reversible conditions before diagnosing dementia?",
+    "answer": "It is essential because many symptoms attributed to dementia may actually stem from treatable issues such as depression, hypothyroidism, medication side effects, undetected hearing or vision problems, or new medical conditions like diabetes. Identifying these allows for modification or correction that could resolve the symptoms.",
+    "topic": "Distinguishing Normal Aging from Dementia",
+    "time_start_sec": 0.0,
+    "time_end_sec": 79.799,
+    "time_start_hhmmss": "00:00:00",
+    "time_end_hhmmss": "00:01:20"
+  },
+  {
+    "question": "How should healthcare providers approach the initial evaluation of cognitive changes to ensure patient dignity?",
+    "answer": "Providers should adopt an investigative mindset, asking \"I don't know if this is normal for this person\" instead of jumping to conclusions like \"it's dementia.\" This approach ensures patients receive a thorough workup and avoids premature labeling.",
+    "topic": "Distinguishing Normal Aging from Dementia",
+    "time_start_sec": 0.0,
+    "time_end_sec": 79.799,
+    "time_start_hhmmss": "00:00:00",
+    "time_end_hhmmss": "00:01:20"
+  },
+  {
+    "question": "What is the logical progression when investigating changes in a patient's cognitive function?",
+    "answer": "The progression involves first noticing a change, then checking to see if it is permanent or if it can be addressed and modified through treatment of underlying causes. If interventions are made and symptoms persist, further investigation is required.",
+    "topic": "Distinguishing Normal Aging from Dementia",
+    "time_start_sec": 0.0,
+    "time_end_sec": 79.799,
+    "time_start_hhmmss": "00:00:00",
+    "time_end_hhmmss": "00:01:20"
+  },
+  {
+    "question": "What is the primary danger of assuming a diagnosis of dementia too early in the evaluation process?",
+    "answer": "The primary danger is overlooking potentially reversible medical or environmental factors that could be fixed or managed, thereby depriving the patient of effective treatment options and appropriate care strategies.",
+    "topic": "Distinguishing Normal Aging from Dementia",
+    "time_start_sec": 0.0,
+    "time_end_sec": 79.799,
+    "time_start_hhmmss": "00:00:00",
+    "time_end_hhmmss": "00:01:20"
+  },
+  {
+    "question": "What is the fundamental difference between using \"dementia\" as a medical diagnosis versus understanding it as described in the transcript?",
+    "answer": "Dementia should not be viewed as a specific diagnosis but rather as a syndrome, which is a collection of symptoms. The transcript clarifies that if someone receives a diagnosis labeled simply as \"dementia,\" it indicates something is incorrect because the term represents a broad category containing many underlying causes rather than a single disease entity.",
+    "topic": "Understanding Dementia as a Syndrome",
+    "time_start_sec": 77.84,
+    "time_end_sec": 164.92,
+    "time_start_hhmmss": "00:01:18",
+    "time_end_hhmmss": "00:02:45"
+  },
+  {
+    "question": "How large is the scope of conditions included under the \"umbrella\" term of dementia compared to the previous belief about Alzheimer's prevalence?",
+    "answer": "The scope is vast, encompassing approximately 85 to 90 different conditions, forms, and causes under the dementia umbrella. This contradicts the outdated belief that 80 to 90% of all dementia cases were Alzheimer's; instead, modern understanding recognizes that cases often involve mixed pictures or entirely different conditions such as Lewy body, frontotemporal, or vascular dementia.",
+    "topic": "Understanding Dementia as a Syndrome",
+    "time_start_sec": 77.84,
+    "time_end_sec": 164.92,
+    "time_start_hhmmss": "00:01:18",
+    "time_end_hhmmss": "00:02:45"
+  },
+  {
+    "question": "Why is the assumption that dementia always equates to memory problems considered a significant misunderstanding according to the text?",
+    "answer": "The assumption is a misunderstanding because the transcript explicitly states that dementia does not necessarily mean memory problems. By defining dementia as a \"great big umbrella term\" covering nearly 90 different conditions, the speaker emphasizes that the syndrome includes various forms that may present differently than just memory loss, distinguishing it from the specific pathology of Alzheimer's alone.",
+    "topic": "Understanding Dementia as a Syndrome",
+    "time_start_sec": 77.84,
+    "time_end_sec": 164.92,
+    "time_start_hhmmss": "00:01:18",
+    "time_end_hhmmss": "00:02:45"
+  },
+  {
+    "question": "Which specific types of conditions are mentioned as examples of the diverse causes found beneath the dementia umbrella?",
+    "answer": "The transcript lists several specific conditions that exist under the dementia umbrella besides Alzheimer's, including Lewy body dementia, frontotemporal dementia, vascular dementia, and dementia associated with other general health conditions. These examples illustrate that the syndrome is heterogeneous and can result from multiple distinct biological mechanisms.",
+    "topic": "Understanding Dementia as a Syndrome",
+    "time_start_sec": 77.84,
+    "time_end_sec": 164.92,
+    "time_start_hhmmss": "00:01:18",
+    "time_end_hhmmss": "00:02:45"
+  },
+  {
+    "question": "What is the primary goal when analyzing a patient who presents with symptoms under the dementia umbrella?",
+    "answer": "The primary goal is to move beyond the vague label of \"dementia\" to identify the specific cause or condition responsible for the symptoms. Since dementia is a syndrome comprising a collection of symptoms rather than a definitive diagnosis, the focus must be on determining exactly what the patient has out of the approximately 85 to 90 possible conditions to ensure proper understanding and care.",
+    "topic": "Understanding Dementia as a Syndrome",
+    "time_start_sec": 77.84,
+    "time_end_sec": 164.92,
+    "time_start_hhmmss": "00:01:18",
+    "time_end_hhmmss": "00:02:45"
+  },
+  {
+    "question": "What are the typical manifestations of memory loss associated with different types of dementia mentioned in the transcript?",
+    "answer": "Memory loss varies by type; Alzheimer's often involves difficulty remembering new things rather than just old ones, alcohol-related dementia features blackouts or missing pieces, vascular dementia presents with various memory issues, and frontal temporal dementia may cause confusion where the individual thinks an event occurred but cannot recall it happening.",
+    "topic": "Four Characteristics of All Dementias",
+    "time_start_sec": 162.12,
+    "time_end_sec": 269.32,
+    "time_start_hhmmss": "00:02:42",
+    "time_end_hhmmss": "00:04:29"
+  },
+  {
+    "question": "Is there currently a cure available for dementia, and what is the primary focus of care given this reality?",
+    "answer": "There is currently no cure, treatment that fixes the condition, or therapy that stops its progression. Consequently, the primary focus must shift to helping individuals learn how to live with the disease effectively.",
+    "topic": "Four Characteristics of All Dementias",
+    "time_start_sec": 162.12,
+    "time_end_sec": 269.32,
+    "time_start_hhmmss": "00:02:42",
+    "time_end_hhmmss": "00:04:29"
+  },
+  {
+    "question": "What is the estimated duration of symptom progression for dementia, and why is understanding this timeline significant for planning?",
+    "answer": "On average, symptoms last between 8 to 12 years, though the duration can vary. Recognizing this long-term timeframe is crucial for preparing to endure a prolonged period of illness and managing expectations.",
+    "topic": "Four Characteristics of All Dementias",
+    "time_start_sec": 162.12,
+    "time_end_sec": 269.32,
+    "time_start_hhmmss": "00:02:42",
+    "time_end_hhmmss": "00:04:29"
+  },
+  {
+    "question": "How does the progressive nature of dementia affect the condition over time until its conclusion?",
+    "answer": "Dementia is a neurodegenerative and progressive illness, meaning the symptoms and changes are constant and ongoing. The condition will not stabilize or improve; it continues to worsen until the disease runs its course completely.",
+    "topic": "Four Characteristics of All Dementias",
+    "time_start_sec": 162.12,
+    "time_end_sec": 269.32,
+    "time_start_hhmmss": "00:02:42",
+    "time_end_hhmmss": "00:04:29"
+  },
+  {
+    "question": "How should the terminal nature of dementia influence the mindset of those living with the condition compared to general life mortality?",
+    "answer": "While dementia is terminal, this is also true for life itself. The appropriate mental shift is to move from fear (\"oh no\") to acceptance and proactive adaptation (\"oh huh\"), recognizing the need to make necessary changes because the person is living under the same ultimate umbrella as everyone else.",
+    "topic": "Four Characteristics of All Dementias",
+    "time_start_sec": 162.12,
+    "time_end_sec": 269.32,
+    "time_start_hhmmss": "00:02:42",
+    "time_end_hhmmss": "00:04:29"
+  },
+  {
+    "question": "How does the impact of dementia extend beyond the individual diagnosed with the condition?",
+    "answer": "Dementia affects everyone around the person diagnosed, meaning that individuals in their lives are also living with dementia in some capacity. The speaker emphasizes that while one person may be chosen by circumstance to receive the diagnosis, the resulting emotional and behavioral shifts impact the entire family unit.",
+    "topic": "Impact on Caregivers and Conclusion",
+    "time_start_sec": 267.08,
+    "time_end_sec": 342.75899999999996,
+    "time_start_hhmmss": "00:04:27",
+    "time_end_hhmmss": "00:05:43"
+  },
+  {
+    "question": "What critical decision must families face regarding their response to a loved one's dementia?",
+    "answer": "Families must decide whether to unite and provide mutual support or to fall apart and withdraw. The speaker highlights that choosing to \"pull together\" allows caregivers to avoid burning themselves out and instead makes a positive difference, whereas falling apart leads to walking away from the situation.",
+    "topic": "Impact on Caregivers and Conclusion",
+    "time_start_sec": 267.08,
+    "time_end_sec": 342.75899999999996,
+    "time_start_hhmmss": "00:04:27",
+    "time_end_hhmmss": "00:05:43"
+  },
+  {
+    "question": "What is the primary role of the speaker in helping families navigate the challenges of dementia?",
+    "answer": "The speaker's purpose is not to cure the condition or stop the changes from occurring, but to offer practical ways for families to adapt. They help caregivers adjust their approach to better match what the person with dementia can still do, acknowledge what is missing, and effectively utilize remaining abilities.",
+    "topic": "Impact on Caregivers and Conclusion",
+    "time_start_sec": 267.08,
+    "time_end_sec": 342.75899999999996,
+    "time_start_hhmmss": "00:04:27",
+    "time_end_hhmmss": "00:05:43"
+  },
+  {
+    "question": "How should caregivers shift their perspective on the abilities of a person with dementia?",
+    "answer": "Caregivers need to move away from focusing solely on deficits and instead learn to use whatever abilities remain. The goal is to align interactions with the person's current capabilities, ensuring that life continues meaningfully under the \"umbrella\" of the disease for both the caregiver and the recipient.",
+    "topic": "Impact on Caregivers and Conclusion",
+    "time_start_sec": 267.08,
+    "time_end_sec": 342.75899999999996,
+    "time_start_hhmmss": "00:04:27",
+    "time_end_hhmmss": "00:05:43"
+  },
+  {
+    "question": "What is the ultimate call to action presented regarding the future of caregiving?",
+    "answer": "The speaker urges everyone to embrace the reality that change is already happening due to dementia and to actively choose collaboration over isolation. By pulling together, families can transform the challenge of living with dementia into an opportunity for collective growth and sustained support.",
+    "topic": "Impact on Caregivers and Conclusion",
+    "time_start_sec": 267.08,
+    "time_end_sec": 342.75899999999996,
+    "time_start_hhmmss": "00:04:27",
+    "time_end_hhmmss": "00:05:43"
+  }
+]

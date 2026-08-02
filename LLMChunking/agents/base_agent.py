@@ -56,7 +56,7 @@ class LLMAgent:
             default_params.update(generation_params)
 
         text = self.tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
+            messages, tokenize=False, add_generation_prompt=True, enable_thinking=False,
         )
 
         inputs = self.tokenizer(

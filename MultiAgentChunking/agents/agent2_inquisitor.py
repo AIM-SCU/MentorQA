@@ -20,9 +20,9 @@ class Inquisitor:
             "Do not use English unless an English word appears verbatim in the input."
         ).format(name=lang_name)
 
-        system_prompt = f"You are an expert {lang_name} content analyst. Your task is to read a long transcript and identify potential questions in {lang_name} that cover the most important educational and mentorship value. {lang_guard}"
+        system_prompt = f"You are an expert {lang_name} content analyst. Your task is to read a long transcript and identify potential questions in {lang_name} that cover the most important educational. {lang_guard}"
 
-        prompt = f"""Based on the following text, generate a list of potential questions with high educational or mentorship value in {lang_name}. Format your output as a simple numbered list.
+        prompt = f"""Based on the following text, generate a list of potential questions with high educational value in {lang_name}. Format your output as a simple numbered list.
         Avoid generating duplicate questions with similar meanings.
         
         Text Segment:
@@ -34,7 +34,10 @@ class Inquisitor:
         ]
 
         text = self.model_handler.tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
+            messages,
+            tokenize=False,
+            add_generation_prompt=True,
+            enable_thinking=False,
         )
 
         inputs = self.model_handler.tokenizer(

@@ -11,6 +11,9 @@ includes four generation approaches:
 The main entry point, `run.py`, coordinates video preprocessing and one or more
 of these approaches.
 
+> **Contributors:** see [docs/PROJECT_STATUS.md](docs/PROJECT_STATUS.md) for the
+> current state of the Qwen 3.5 9B migration, what's done, and the remaining ToDos.
+
 ## Prerequisites
 
 - **Python 3.10 (recommended).** The repository does not declare a Python

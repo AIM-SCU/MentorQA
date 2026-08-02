@@ -84,7 +84,7 @@ class MultiAgent:
         self.gpu_monitor.print_gpu_memory()
 
         # Load Model
-        print("\n⏳ Loading Qwen2.5-7B-Instruct-1M for all agent roles...")
+        print("\n⏳ Loading Qwen3.5-9B for all agent roles...")
         self.model_handler = QAModel(qwen_model_path).load_model()
 
         # Post-load GPU memory

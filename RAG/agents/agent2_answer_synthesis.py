@@ -57,7 +57,7 @@ class AnswerSynthesizer:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
         ]
-        text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True, enable_thinking=False,)
         inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=131072).to(model.device)
 
         with torch.no_grad():

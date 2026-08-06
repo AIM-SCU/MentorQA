@@ -44,20 +44,60 @@ The intended zero-dependency workflow is to copy the complete `website/` folder 
 
 1. Copy `website/` into the target repository.
 2. Copy `src/project/template.js` to a new file, such as `src/project/my-paper.js`.
-3. Fill in its brand, hero, resources, statistics, sections, citation, and CTA using facts from the paper.
-4. Replace `example-architecture.svg` and any other template assets with the paper's real figures.
-5. Import the new configuration in `src/app.js` and make it the default project:
+3. Open the new file and edit only the area between `EDITABLE CONTENT: START` and `EDITABLE CONTENT: END`.
+4. Replace the text in square brackets, paste in the paper/code/dataset links, and update the image path. Language, metric, system, and finding counts are calculated automatically from the lists.
+5. Place the paper's real figures in `website/` and replace `figure.src` with the filename. No image import code is needed.
+6. Import the new configuration in `src/app.js` and make it the default project:
 
 ```js
 import { renderShowcase } from "./core/showcase.js";
-import { myPaper } from "./project/my-paper.js";
+import { templateProject as myPaper } from "./project/my-paper.js";
 
 renderShowcase(myPaper);
 ```
 
-6. Preview from the target repository root with `python3 -m http.server 8000` and open `/website/`.
+7. Preview from the target repository root with `python3 -m http.server 8000` and open `/website/`.
 
-No component or layout file needs to change. After the new page is verified, the copied `mentorqa.js`, `template.js`, and demo-only assets can be omitted from that repository.
+No HTML, CSS, component, layout, chart, or interaction file needs to change. After the new page is verified, the copied `mentorqa.js`, `template.js`, and demo-only assets can be omitted from that repository.
+
+### What is automatic
+
+- Navigation and responsive layout
+- One to five columns based on the number of blocks
+- Language, metric, and evaluated-system counts
+- Donut colors and language selection behavior
+- Comparison-bar lengths when numeric scores are entered
+- Highlighting of the highest numeric score
+- Card, chart, menu, and citation interactions
+
+The template author only supplies paper content, links, and image paths. The section below `EDITABLE CONTENT: END` is the adapter and should not be edited.
+
+## Automatic section columns
+
+Sections automatically choose their column count from the number of blocks. One block uses one column, two blocks use two columns, and so on up to five columns. More than five blocks wrap onto another row.
+
+Most project configurations therefore only need a `blocks` array:
+
+```js
+{
+  id: "results",
+  title: "Results",
+  blocks: [resultA, resultB, resultC], // automatically three columns
+}
+```
+
+Set `columns` only when the desired layout differs from the block count—for example, to arrange four blocks as a two-by-two grid on wide screens:
+
+```js
+{
+  id: "results",
+  title: "Results",
+  columns: 2,
+  blocks: [resultA, resultB, resultC, resultD],
+}
+```
+
+On wide screens the automatic or overridden column count is used. Five-column layouts step down to four and then three columns as space narrows; three- to five-column layouts become two columns on tablets, and every layout becomes one column on phones. Invalid override values fail configuration validation instead of silently producing a broken grid.
 
 ## Built-in block types
 

@@ -44,7 +44,6 @@ export const mentorQA = {
       eyebrow: "01 · Benchmark",
       title: "A dataset for guidance, not just recall",
       description: "Mentorship questions turn long-form talks into practical knowledge for education, careers, wellbeing, and personal growth.",
-      layout: "two-column",
       blocks: [
         {
           type: "donut",
@@ -93,7 +92,6 @@ export const mentorQA = {
       eyebrow: "02 · Methods",
       title: "Four complementary QA-generation models",
       description: "Single-Agent, Dual-Agent, Multi-Agent, and RAG are evaluated under controlled conditions.",
-      layout: "systems-grid",
       blocks: [
         {
           type: "image",

@@ -19,10 +19,16 @@ export function StatsSection(stats) {
 }
 
 export function ContentSection(section) {
-  const layout = section.layout ?? (section.blocks.length === 2 ? "two-column" : "block-stack");
+  const requestedColumns = Number(section.columns);
+  const hasColumnOverride = Number.isInteger(requestedColumns) && requestedColumns >= 1 && requestedColumns <= 5;
+  const automaticColumns = Math.min(Math.max(section.blocks.length, 1), 5);
+  const columns = hasColumnOverride ? requestedColumns : automaticColumns;
+  const usesGrid = hasColumnOverride || !section.layout;
+  const layout = usesGrid ? "section-grid" : section.layout;
+  const layoutAttributes = usesGrid ? ` data-columns="${columns}" style="--section-columns:${columns}"` : "";
   return `<section class="section" id="${section.id}">
     ${SectionHeading(section)}
-    <div class="${layout}">${section.blocks.map(renderBlock).join("")}</div>
+    <div class="${layout}"${layoutAttributes}>${section.blocks.map(renderBlock).join("")}</div>
   </section>`;
 }
 

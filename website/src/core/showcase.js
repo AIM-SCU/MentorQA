@@ -24,6 +24,11 @@ function validateConfig(config) {
   if (!Array.isArray(config.sections)) throw new Error("Showcase config requires a sections array.");
   const ids = config.sections.map((section) => section.id);
   if (new Set(ids).size !== ids.length) throw new Error("Every showcase section id must be unique.");
+  config.sections.forEach((section) => {
+    if (section.columns !== undefined && (!Number.isInteger(Number(section.columns)) || Number(section.columns) < 1 || Number(section.columns) > 5)) {
+      throw new Error(`Section "${section.id}" columns must be an integer from 1 to 5.`);
+    }
+  });
 }
 
 export function renderShowcase(config, mount = document.querySelector("#app")) {

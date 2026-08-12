@@ -2,7 +2,7 @@
  * MentorQA is the only project-specific file used by the app.
  * Copy `template.js` when adapting the showcase for another paper.
  */
-export const mentorQA = {
+export const siteProject = {
   meta: {
     title: "MentorQA · AIM Research Showcase",
     description: "MentorQA — mentorship-oriented question answering over long-form multilingual content.",
@@ -98,7 +98,7 @@ export const mentorQA = {
           eyebrow: "Method",
           title: "Multi-agent workflow",
           badge: "Ours",
-          src: "../architecture.jpg",
+          src: "./assets/architecture.jpg",
           alt: "MentorQA multi-agent architecture diagram",
           note: "Architect, inquisitor, scorer, justifier, and synthesizer agents collaborate to identify high-value mentorship QA.",
         },

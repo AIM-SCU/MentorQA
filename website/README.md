@@ -15,6 +15,17 @@ Open `http://localhost:8000/website/`.
 To preview the copyable template configuration, open
 `http://localhost:8000/website/?project=template`.
 
+## Publish this repository with GitHub Pages
+
+The workflow at `.github/workflows/pages.yml` publishes this folder whenever website files are pushed to `main`. It also includes the repository-level `architecture.jpg` and normalizes its path in the temporary deployment artifact, so local and published previews both work without storing a duplicate image.
+
+1. Merge the website branch into `main`.
+2. In the GitHub repository, open **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Open the **Actions** tab and wait for **Deploy research showcase to GitHub Pages** to complete.
+
+The project site will be available at `https://aim-scu.github.io/MentorQA/`. The workflow can also be started manually from its Actions page.
+
 ## Module structure
 
 ```text

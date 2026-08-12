@@ -1,12 +1,13 @@
 import { renderShowcase } from "./core/showcase.js";
-import { mentorQA } from "./project/mentorqa.js";
-import { templateProject } from "./project/template.js?v=20260806-1";
+import { siteProject } from "./project/site.js";
+import { siteProject as templateProject } from "./project/template.js?v=20260812-1";
 
 const projects = {
   example: templateProject,
-  mentorqa: mentorQA,
+  mentorqa: siteProject,
+  site: siteProject,
   template: templateProject,
 };
 
-const projectName = new URLSearchParams(window.location.search).get("project") ?? "mentorqa";
-renderShowcase(projects[projectName] ?? mentorQA);
+const projectName = new URLSearchParams(window.location.search).get("project") ?? "site";
+renderShowcase(projects[projectName] ?? siteProject);

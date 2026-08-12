@@ -2,7 +2,7 @@
  * RESEARCH SHOWCASE TEMPLATE
  *
  * Edit only the CONTENT section below. Replace the text in square brackets,
- * paste in links, and point `figure.src` to an image in the website folder.
+ * paste in links, and point `figure.src` to an image in `website/assets/`.
  * Counts, chart lengths, navigation, layout, and interactions are automatic.
  */
 
@@ -68,7 +68,7 @@ const content = {
     figure: {
       title: "[Architecture figure title]",
       badge: "[Method label]",
-      src: "./example-architecture.svg",
+      src: "./assets/example-architecture.svg",
       alt: "[Accessible description of the architecture figure]",
       note: "[One sentence explaining the key stages in the architecture]",
     },
@@ -125,7 +125,7 @@ function comparisonLevel(score, index, count) {
   return count === 1 ? 80 : 68 + (index / (count - 1)) * 20;
 }
 
-export const templateProject = {
+export const siteProject = {
   meta: {
     title: `${content.paper.shortTitle} · ${content.lab.name}`,
     description: content.paper.description,

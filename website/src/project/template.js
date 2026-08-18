@@ -30,13 +30,16 @@ const content = {
     dataset: "https://example.com/dataset",
   },
 
+  highlights: [
+    { icon: "spark", title: "[Highlight title]", description: "[Short supporting detail]" },
+    { icon: "award", title: "[Award or achievement]", description: "[Venue or context]" },
+    { icon: "globe", title: "[Key fact]", description: "[What it means]" },
+    { icon: "layers", title: "[Key contribution]", description: "[Short supporting detail]" },
+  ],
+
   dataset: {
     sectionTitle: "[Dataset section title]",
     sectionDescription: "[One sentence explaining the dataset's purpose and scope]",
-    size: "[Dataset size]",
-    sizeLabel: "[Dataset unit, e.g. QA pairs]",
-    sourceAmount: "[Source amount, e.g. 180h]",
-    sourceLabel: "[Source type, e.g. Long-form video]",
     languages: [
       { name: "[Language A]", code: "LA" },
       { name: "[Language B]", code: "LB" },
@@ -64,7 +67,6 @@ const content = {
 
   methods: {
     navigationLabel: "[Methods navigation label, e.g. QA Models]",
-    countLabel: "[Systems count label, e.g. QA-generation models]",
     sectionTitle: "[Methods section title]",
     sectionDescription: "[One sentence explaining the methods or systems being compared]",
     figure: {
@@ -155,12 +157,7 @@ export const siteProject = {
       { label: "Dataset", url: content.links.dataset, style: "tertiary", icon: "external" },
     ],
   },
-  stats: [
-    { icon: "questions", value: content.dataset.size, label: content.dataset.sizeLabel },
-    { icon: "video", value: content.dataset.sourceAmount, label: content.dataset.sourceLabel },
-    { icon: "globe", value: String(content.dataset.languages.length), label: "Languages" },
-    { icon: "layers", value: String(content.methods.comparison.items.length), label: content.methods.countLabel },
-  ],
+  highlights: content.highlights,
   sections: [
     {
       id: "dataset",

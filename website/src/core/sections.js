@@ -13,9 +13,9 @@ export function HeroSection(hero) {
   </section>`;
 }
 
-export function StatsSection(stats) {
-  if (!stats?.length) return "";
-  return `<section class="stats" aria-label="Project statistics">${stats.map((stat, index) => `<article class="stat-card reveal" style="--delay:${index * 55}ms"><span class="stat-icon">${icon(stat.icon)}</span><div><div class="stat-value">${stat.value}</div><h3>${stat.label}</h3>${stat.note ? `<p>${stat.note}</p>` : ""}</div></article>`).join("")}</section>`;
+export function HighlightsSection(highlights) {
+  if (!highlights?.length) return "";
+  return `<section class="highlights" aria-label="Project highlights">${highlights.map((highlight, index) => `<article class="highlight-card reveal" style="--delay:${index * 55}ms"><span class="highlight-icon">${icon(highlight.icon)}</span><div><h3 class="highlight-title">${highlight.title}</h3>${highlight.description ? `<p>${highlight.description}</p>` : ""}</div></article>`).join("")}</section>`;
 }
 
 export function ContentSection(section) {

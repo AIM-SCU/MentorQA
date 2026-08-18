@@ -5,6 +5,7 @@ const paths = {
   spark: '<path d="m12 3 1.4 4.1L17.5 8.5l-4.1 1.4L12 14l-1.4-4.1-4.1-1.4 4.1-1.4L12 3Z"/><path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15Z"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
   questions: '<path d="M8.5 9a3.5 3.5 0 1 1 5.5 2.9c-1.2.8-2 1.3-2 2.6"/><path d="M12 18v.01"/><circle cx="12" cy="12" r="10"/>',
+  award: '<circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-2 4.5 2-1-9"/><path d="m10 8 1.3 1.3L14 6.7"/>',
   video: '<rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2v-4ZM8 9l5 3-5 3V9Z"/>',
   globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>',
   external: '<path d="M14 3h7v7M21 3l-10 10"/><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"/>',

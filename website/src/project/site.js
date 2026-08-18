@@ -10,7 +10,7 @@
 
 const content = {
   lab: {
-    mark: "AIIM",
+    mark: "AIM",
     name: "AIM",
     institution: "Santa Clara University",
   },
@@ -30,13 +30,16 @@ const content = {
     dataset: "https://huggingface.co/datasets/AIM-SCU/MentorQA",
   },
 
+  highlights: [
+    { icon: "questions", title: "8,990", description: "Mentorship QA pairs" },
+    { icon: "video", title: "180h", description: "Long-form video" },
+    { icon: "globe", title: "4", description: "Languages" },
+    { icon: "layers", title: "4", description: "QA-generation models" },
+  ],
+
   dataset: {
     sectionTitle: "A dataset for guidance, not just recall",
     sectionDescription: "Mentorship questions turn long-form talks into practical knowledge for education, careers, wellbeing, and personal growth.",
-    size: "8,990",
-    sizeLabel: "Mentorship QA pairs",
-    sourceAmount: "180h",
-    sourceLabel: "Long-form video",
     languages: [
       { name: "English", code: "EN" },
       { name: "Hindi", code: "HI" },
@@ -70,7 +73,6 @@ const content = {
 
   methods: {
     navigationLabel: "QA Models",
-    countLabel: "QA-generation models",
     sectionTitle: "Four complementary QA-generation models",
     sectionDescription: "Single-Agent, Dual-Agent, Multi-Agent, and RAG are evaluated under controlled conditions.",
     figure: {
@@ -173,12 +175,7 @@ export const siteProject = {
       { label: "Dataset", url: content.links.dataset, style: "tertiary", icon: "external" },
     ],
   },
-  stats: [
-    { icon: "questions", value: content.dataset.size, label: content.dataset.sizeLabel },
-    { icon: "video", value: content.dataset.sourceAmount, label: content.dataset.sourceLabel },
-    { icon: "globe", value: String(content.dataset.languages.length), label: "Languages" },
-    { icon: "layers", value: String(content.methods.comparison.items.length), label: content.methods.countLabel },
-  ],
+  highlights: content.highlights,
   sections: [
     {
       id: "dataset",

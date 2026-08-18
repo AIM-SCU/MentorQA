@@ -127,7 +127,7 @@ function comparisonLevel(score, index, count) {
 
 export const siteProject = {
   meta: {
-    title: `${content.paper.shortTitle} · ${content.lab.name}`,
+    title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
   },
   brand: {

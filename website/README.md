@@ -16,6 +16,7 @@ Do not edit `app.js`, HTML, CSS, components, layout code, charts, or interaction
 ## What the template handles automatically
 
 - Language, metric, and system counts
+- Browser titles and search descriptions from the project content
 - Responsive layouts with one to five columns
 - Donut colors and selection behavior
 - Comparison-bar lengths and highest-score highlighting

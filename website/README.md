@@ -15,13 +15,15 @@ Do not edit `app.js`, HTML, CSS, components, layout code, charts, or interaction
 
 ## What the template handles automatically
 
-- Language, metric, and system counts
+- Flexible highlight cards for metrics, awards, achievements, or key messages
+- Language and metric counts
+- Browser titles and search descriptions from the project content
 - Responsive layouts with one to five columns
 - Donut colors and selection behavior
 - Comparison-bar lengths and highest-score highlighting
 - Navigation, card interactions, and citation copying
 
-Authors, languages, metrics, systems, and findings can be added or removed directly from their lists in `site.js`.
+Authors, highlights, languages, metrics, systems, and findings can be added or removed directly from their lists in `site.js`.
 
 ## Add images
 
@@ -30,6 +32,8 @@ Keep all paper-specific website images in:
 ```text
 website/assets/
 ```
+
+Apart from `src/project/site.js` and paper-specific files in `assets/`, the website folder is project-agnostic and should be reused unchanged.
 
 Example:
 

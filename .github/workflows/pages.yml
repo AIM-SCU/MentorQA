@@ -34,6 +34,7 @@ jobs:
         run: |
           mkdir _site
           cp -R website/. _site/
+          node _site/scripts/prepare-static-site.mjs _site/index.html
           touch _site/.nojekyll
 
       - name: Upload GitHub Pages artifact

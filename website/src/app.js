@@ -4,7 +4,6 @@ import { siteProject as templateProject } from "./project/template.js?v=20260812
 
 const projects = {
   example: templateProject,
-  mentorqa: siteProject,
   site: siteProject,
   template: templateProject,
 };

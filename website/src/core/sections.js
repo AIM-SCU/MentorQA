@@ -4,7 +4,7 @@ import { ResourceLink, SectionHeading } from "./primitives.js";
 
 export function HeroSection(hero) {
   return `<section class="hero" id="overview">
-    <div class="hero-title reveal"><h1>${hero.title}</h1></div>
+    <div class="hero-title reveal"><h1${hero.singleLineTitle ? ' class="single-line-title"' : ""}>${hero.title}</h1></div>
     <div class="hero-copy reveal">
       <h2 class="hero-subtitle">${hero.subtitle}</h2>
       <div class="paper-meta">${hero.authors?.length ? `<span>${icon("users")} ${hero.authors.join(" · ")}</span>` : ""}${hero.venue ? `<span>${hero.venue}</span>` : ""}</div>
@@ -13,9 +13,9 @@ export function HeroSection(hero) {
   </section>`;
 }
 
-export function StatsSection(stats) {
-  if (!stats?.length) return "";
-  return `<section class="stats" aria-label="Project statistics">${stats.map((stat, index) => `<article class="stat-card reveal" style="--delay:${index * 55}ms"><span class="stat-icon">${icon(stat.icon)}</span><div><div class="stat-value">${stat.value}</div><h3>${stat.label}</h3>${stat.note ? `<p>${stat.note}</p>` : ""}</div></article>`).join("")}</section>`;
+export function HighlightsSection(highlights) {
+  if (!highlights?.length) return "";
+  return `<section class="highlights" aria-label="Project highlights">${highlights.map((highlight, index) => `<article class="highlight-card reveal" style="--delay:${index * 55}ms"><span class="highlight-icon">${icon(highlight.icon)}</span><div><h3 class="highlight-title">${highlight.title}</h3>${highlight.description ? `<p>${highlight.description}</p>` : ""}</div></article>`).join("")}</section>`;
 }
 
 export function ContentSection(section) {

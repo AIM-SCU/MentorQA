@@ -12,12 +12,14 @@ const content = {
   lab: {
     mark: "LAB",
     name: "[Lab name]",
+    tagline: "", // Optional short label shown below the logo
     institution: "[University or institution]",
   },
 
   paper: {
     shortTitle: "[Project name]",
     title: "[Short paper title]",
+    singleLineTitle: false,
     subtitle: "[Full paper subtitle]",
     venue: "[Venue · Year]",
     authors: ["[First Author]", "[Second Author]", "[Third Author]"],
@@ -30,13 +32,16 @@ const content = {
     dataset: "https://example.com/dataset",
   },
 
+  highlights: [
+    { icon: "spark", title: "[Highlight title]", description: "[Short supporting detail]" },
+    { icon: "award", title: "[Award or achievement]", description: "[Venue or context]" },
+    { icon: "globe", title: "[Key fact]", description: "[What it means]" },
+    { icon: "layers", title: "[Key contribution]", description: "[Short supporting detail]" },
+  ],
+
   dataset: {
     sectionTitle: "[Dataset section title]",
     sectionDescription: "[One sentence explaining the dataset's purpose and scope]",
-    size: "[Dataset size]",
-    sizeLabel: "[Dataset unit, e.g. QA pairs]",
-    sourceAmount: "[Source amount, e.g. 180h]",
-    sourceLabel: "[Source type, e.g. Long-form video]",
     languages: [
       { name: "[Language A]", code: "LA" },
       { name: "[Language B]", code: "LB" },
@@ -63,6 +68,7 @@ const content = {
   },
 
   methods: {
+    navigationLabel: "[Methods navigation label, e.g. QA Models]",
     sectionTitle: "[Methods section title]",
     sectionDescription: "[One sentence explaining the methods or systems being compared]",
     figure: {
@@ -127,12 +133,12 @@ function comparisonLevel(score, index, count) {
 
 export const siteProject = {
   meta: {
-    title: `${content.paper.shortTitle} · ${content.lab.name}`,
+    title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
   },
   brand: {
     mark: content.lab.mark,
-    label: content.lab.name,
+    label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
@@ -144,6 +150,7 @@ export const siteProject = {
   hero: {
     shortTitle: content.paper.shortTitle,
     title: content.paper.title,
+    singleLineTitle: content.paper.singleLineTitle,
     subtitle: content.paper.subtitle,
     venue: content.paper.venue,
     authors: content.paper.authors,
@@ -153,12 +160,7 @@ export const siteProject = {
       { label: "Dataset", url: content.links.dataset, style: "tertiary", icon: "external" },
     ],
   },
-  stats: [
-    { icon: "questions", value: content.dataset.size, label: content.dataset.sizeLabel },
-    { icon: "video", value: content.dataset.sourceAmount, label: content.dataset.sourceLabel },
-    { icon: "globe", value: String(content.dataset.languages.length), label: "Languages" },
-    { icon: "layers", value: String(content.methods.comparison.items.length), label: "Evaluated systems" },
-  ],
+  highlights: content.highlights,
   sections: [
     {
       id: "dataset",
@@ -197,7 +199,7 @@ export const siteProject = {
     },
     {
       id: "systems",
-      navLabel: "Systems",
+      navLabel: content.methods.navigationLabel,
       navIcon: "layers",
       eyebrow: "02 · Methods",
       title: content.methods.sectionTitle,

@@ -69,6 +69,8 @@ const content = {
   },
 
   methods: {
+    navigationLabel: "QA Models",
+    countLabel: "QA-generation models",
     sectionTitle: "Four complementary QA-generation models",
     sectionDescription: "Single-Agent, Dual-Agent, Multi-Agent, and RAG are evaluated under controlled conditions.",
     figure: {
@@ -175,7 +177,7 @@ export const siteProject = {
     { icon: "questions", value: content.dataset.size, label: content.dataset.sizeLabel },
     { icon: "video", value: content.dataset.sourceAmount, label: content.dataset.sourceLabel },
     { icon: "globe", value: String(content.dataset.languages.length), label: "Languages" },
-    { icon: "layers", value: String(content.methods.comparison.items.length), label: "Evaluated systems" },
+    { icon: "layers", value: String(content.methods.comparison.items.length), label: content.methods.countLabel },
   ],
   sections: [
     {
@@ -215,7 +217,7 @@ export const siteProject = {
     },
     {
       id: "systems",
-      navLabel: "Systems",
+      navLabel: content.methods.navigationLabel,
       navIcon: "layers",
       eyebrow: "02 · Methods",
       title: content.methods.sectionTitle,

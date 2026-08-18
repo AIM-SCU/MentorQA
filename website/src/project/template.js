@@ -63,6 +63,8 @@ const content = {
   },
 
   methods: {
+    navigationLabel: "[Methods navigation label, e.g. QA Models]",
+    countLabel: "[Systems count label, e.g. QA-generation models]",
     sectionTitle: "[Methods section title]",
     sectionDescription: "[One sentence explaining the methods or systems being compared]",
     figure: {
@@ -157,7 +159,7 @@ export const siteProject = {
     { icon: "questions", value: content.dataset.size, label: content.dataset.sizeLabel },
     { icon: "video", value: content.dataset.sourceAmount, label: content.dataset.sourceLabel },
     { icon: "globe", value: String(content.dataset.languages.length), label: "Languages" },
-    { icon: "layers", value: String(content.methods.comparison.items.length), label: "Evaluated systems" },
+    { icon: "layers", value: String(content.methods.comparison.items.length), label: content.methods.countLabel },
   ],
   sections: [
     {
@@ -197,7 +199,7 @@ export const siteProject = {
     },
     {
       id: "systems",
-      navLabel: "Systems",
+      navLabel: content.methods.navigationLabel,
       navIcon: "layers",
       eyebrow: "02 · Methods",
       title: content.methods.sectionTitle,

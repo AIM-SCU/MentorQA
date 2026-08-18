@@ -2,7 +2,7 @@ import { icon } from "./icons.js";
 
 export function Sidebar({ brand, navigation }) {
   return `<aside class="sidebar" id="sidebar">
-    <div class="brand"><span class="brand-mark">${brand.mark}</span><span>${brand.label}</span></div>
+    <div class="brand"><span class="brand-mark">${brand.mark}</span>${brand.label ? `<span>${brand.label}</span>` : ""}</div>
     <button class="sidebar-close icon-button" data-menu-close aria-label="Close menu">${icon("close")}</button>
     <nav aria-label="Page sections">${navigation.map((item, index) => `
       <a class="nav-link ${index === 0 ? "active" : ""}" href="#${item.id}">${icon(item.icon)}<span>${item.label}</span></a>

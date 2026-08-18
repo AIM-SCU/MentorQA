@@ -12,12 +12,14 @@ const content = {
   lab: {
     mark: "AIM",
     name: "AIM",
+    tagline: "",
     institution: "Santa Clara University",
   },
 
   paper: {
     shortTitle: "MentorQA",
     title: "Beyond Factual QA",
+    singleLineTitle: true,
     subtitle: "Mentorship-Oriented Question Answering over Long-Form Multilingual Content",
     venue: "Preprint · January 2026",
     authors: ["Parth Bhalerao", "Diola Dsouza", "Ruiwen Guan", "Oana Ignat"],
@@ -154,7 +156,7 @@ export const siteProject = {
   },
   brand: {
     mark: content.lab.mark,
-    label: content.lab.name,
+    label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
@@ -166,6 +168,7 @@ export const siteProject = {
   hero: {
     shortTitle: content.paper.shortTitle,
     title: content.paper.title,
+    singleLineTitle: content.paper.singleLineTitle,
     subtitle: content.paper.subtitle,
     venue: content.paper.venue,
     authors: content.paper.authors,

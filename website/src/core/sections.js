@@ -4,7 +4,7 @@ import { ResourceLink, SectionHeading } from "./primitives.js";
 
 export function HeroSection(hero) {
   return `<section class="hero" id="overview">
-    <div class="hero-title reveal"><h1>${hero.title}</h1></div>
+    <div class="hero-title reveal"><h1${hero.singleLineTitle ? ' class="single-line-title"' : ""}>${hero.title}</h1></div>
     <div class="hero-copy reveal">
       <h2 class="hero-subtitle">${hero.subtitle}</h2>
       <div class="paper-meta">${hero.authors?.length ? `<span>${icon("users")} ${hero.authors.join(" · ")}</span>` : ""}${hero.venue ? `<span>${hero.venue}</span>` : ""}</div>

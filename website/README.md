@@ -33,6 +33,8 @@ Keep all paper-specific website images in:
 website/assets/
 ```
 
+Apart from `src/project/site.js` and paper-specific files in `assets/`, the website folder is project-agnostic and should be reused unchanged.
+
 Example:
 
 ```js

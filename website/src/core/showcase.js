@@ -11,14 +11,14 @@ function buildNavigation(config) {
 }
 
 function applyDocumentMetadata(config) {
-  document.title = config.meta?.title ?? `${config.hero.title} · ${config.brand.label}`;
+  document.title = config.meta?.title ?? `${config.hero.title} · ${config.brand.label || config.brand.mark}`;
   const description = document.querySelector('meta[name="description"]');
   if (description && config.meta?.description) description.content = config.meta.description;
   Object.entries(config.theme ?? {}).forEach(([token, value]) => document.documentElement.style.setProperty(`--${token}`, value));
 }
 
 function validateConfig(config) {
-  if (!config?.brand?.mark || !config?.brand?.label) throw new Error("Showcase config requires brand.mark and brand.label.");
+  if (!config?.brand?.mark) throw new Error("Showcase config requires brand.mark.");
   if (!config?.hero?.title || !config?.hero?.subtitle) throw new Error("Showcase config requires hero.title and hero.subtitle.");
   if (!Array.isArray(config.hero.resources)) throw new Error("Showcase config requires a hero.resources array.");
   if (config.highlights !== undefined && !Array.isArray(config.highlights)) throw new Error("Showcase config highlights must be an array.");

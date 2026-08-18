@@ -12,12 +12,14 @@ const content = {
   lab: {
     mark: "LAB",
     name: "[Lab name]",
+    tagline: "", // Optional short label shown below the logo
     institution: "[University or institution]",
   },
 
   paper: {
     shortTitle: "[Project name]",
     title: "[Short paper title]",
+    singleLineTitle: false,
     subtitle: "[Full paper subtitle]",
     venue: "[Venue · Year]",
     authors: ["[First Author]", "[Second Author]", "[Third Author]"],
@@ -136,7 +138,7 @@ export const siteProject = {
   },
   brand: {
     mark: content.lab.mark,
-    label: content.lab.name,
+    label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
@@ -148,6 +150,7 @@ export const siteProject = {
   hero: {
     shortTitle: content.paper.shortTitle,
     title: content.paper.title,
+    singleLineTitle: content.paper.singleLineTitle,
     subtitle: content.paper.subtitle,
     venue: content.paper.venue,
     authors: content.paper.authors,

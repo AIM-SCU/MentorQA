@@ -1,6 +1,6 @@
 import { renderShowcase } from "./core/showcase.js";
-import { siteProject } from "./project/site.js";
-import { siteProject as templateProject } from "./project/template.js?v=20260819-1";
+import { siteProject } from "./project/site.js?v=20260819-2";
+import { siteProject as templateProject } from "./project/template.js?v=20260819-2";
 
 const projects = {
   example: templateProject,

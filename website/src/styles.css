@@ -4,10 +4,10 @@
   --line: #e2eae6;
   --surface: #ffffff;
   --canvas: #f7faf8;
-  --primary: #5369d8;
-  --secondary: #39a39c;
-  --secondary-text: #26746f;
-  --dark: #10172d;
+  --primary: #e56717;
+  --secondary: #00b4d9;
+  --secondary-text: #007880;
+  --dark: #004868;
   --primary-soft: color-mix(in srgb, var(--primary) 11%, white);
   --secondary-soft: color-mix(in srgb, var(--secondary) 11%, white);
   --sidebar: 244px;

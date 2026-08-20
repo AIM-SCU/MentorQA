@@ -1,3 +1,5 @@
+import { AIM_CHART_COLORS, AIM_THEME } from "../core/theme.js";
+
 /**
  * RESEARCH SHOWCASE TEMPLATE
  *
@@ -15,18 +17,6 @@ const content = {
     name: "[Lab name]",
     tagline: "", // Optional short label shown below the logo
     institution: "[University or institution]",
-  },
-
-  theme: {
-    primary: "#5369D8",
-    secondary: "#39A39C",
-    secondaryText: "#26746F",
-    dark: "#10172D",
-    ink: "#183843",
-    muted: "#65777A",
-    line: "#E2EAE6",
-    canvas: "#F7FAF8",
-    chartColors: ["#5369D8", "#8B75DF", "#39A39C", "#E1A344", "#D56D88"],
   },
 
   paper: {
@@ -128,7 +118,7 @@ const content = {
 // ──────────────────────── EDITABLE CONTENT: END ────────────────────────
 // Everything below builds the page automatically. No editing is required.
 
-const languageColors = content.theme.chartColors;
+const languageColors = AIM_CHART_COLORS;
 const metricCount = content.evaluation.groups.reduce(
   (total, group) => total + group.rows.reduce((groupTotal, row) => groupTotal + row.length, 0),
   0,
@@ -156,16 +146,7 @@ export const siteProject = {
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
-  theme: {
-    primary: content.theme.primary,
-    secondary: content.theme.secondary,
-    "secondary-text": content.theme.secondaryText,
-    dark: content.theme.dark,
-    ink: content.theme.ink,
-    muted: content.theme.muted,
-    line: content.theme.line,
-    canvas: content.theme.canvas,
-  },
+  theme: AIM_THEME,
   labels: { overview: "Overview", about: "About" },
   hero: {
     shortTitle: content.paper.shortTitle,

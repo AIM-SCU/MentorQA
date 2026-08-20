@@ -1,9 +1,11 @@
+import { AIM_CHART_COLORS, AIM_THEME } from "../core/theme.js";
+
 /**
- * MENTORQA RESEARCH SHOWCASE
+ * RESEARCH SHOWCASE TEMPLATE
  *
- * This file follows the same content-driven structure as `template.js`.
- * Project details live only in the CONTENT section; everything below it is
- * generated automatically.
+ * Edit only the CONTENT section below. Replace the text in square brackets,
+ * paste in links, and point `figure.src` to an image in `website/assets/`.
+ * Counts, chart lengths, navigation, layout, and interactions are automatic.
  */
 
 // ─────────────────────── EDITABLE CONTENT: START ───────────────────────
@@ -15,18 +17,6 @@ const content = {
     name: "AIM",
     tagline: "",
     institution: "Santa Clara University",
-  },
-
-  theme: {
-    primary: "#E56717",
-    secondary: "#00B4D9",
-    secondaryText: "#007880",
-    dark: "#004868",
-    ink: "#183843",
-    muted: "#65777A",
-    line: "#E2EAE6",
-    canvas: "#F7FAF8",
-    chartColors: ["#E85838", "#F0A038", "#00B4D9", "#007880", "#0868A0"],
   },
 
   paper: {
@@ -146,7 +136,7 @@ const content = {
 // ──────────────────────── EDITABLE CONTENT: END ────────────────────────
 // Everything below builds the page automatically. No editing is required.
 
-const languageColors = content.theme.chartColors;
+const languageColors = AIM_CHART_COLORS;
 const metricCount = content.evaluation.groups.reduce(
   (total, group) => total + group.rows.reduce((groupTotal, row) => groupTotal + row.length, 0),
   0,
@@ -174,16 +164,7 @@ export const siteProject = {
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
-  theme: {
-    primary: content.theme.primary,
-    secondary: content.theme.secondary,
-    "secondary-text": content.theme.secondaryText,
-    dark: content.theme.dark,
-    ink: content.theme.ink,
-    muted: content.theme.muted,
-    line: content.theme.line,
-    canvas: content.theme.canvas,
-  },
+  theme: AIM_THEME,
   labels: { overview: "Overview", about: "About" },
   hero: {
     shortTitle: content.paper.shortTitle,

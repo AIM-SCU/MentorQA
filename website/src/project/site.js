@@ -1,9 +1,11 @@
+import { AIM_CHART_COLORS, AIM_THEME } from "../core/theme.js";
+
 /**
- * MENTORQA RESEARCH SHOWCASE
+ * RESEARCH SHOWCASE TEMPLATE
  *
- * This file follows the same content-driven structure as `template.js`.
- * Project details live only in the CONTENT section; everything below it is
- * generated automatically.
+ * Edit only the CONTENT section below. Replace the text in square brackets,
+ * paste in links, and point `figure.src` to an image in `website/assets/`.
+ * Counts, chart lengths, navigation, layout, and interactions are automatic.
  */
 
 // ─────────────────────── EDITABLE CONTENT: START ───────────────────────
@@ -11,6 +13,7 @@
 const content = {
   lab: {
     mark: "AIM",
+    logo: "./assets/aim_logo.png",
     name: "AIM",
     tagline: "",
     institution: "Santa Clara University",
@@ -133,7 +136,7 @@ const content = {
 // ──────────────────────── EDITABLE CONTENT: END ────────────────────────
 // Everything below builds the page automatically. No editing is required.
 
-const languageColors = ["#5369d8", "#8b75df", "#39a39c", "#e1a344", "#d56d88"];
+const languageColors = AIM_CHART_COLORS;
 const metricCount = content.evaluation.groups.reduce(
   (total, group) => total + group.rows.reduce((groupTotal, row) => groupTotal + row.length, 0),
   0,
@@ -153,17 +156,15 @@ export const siteProject = {
   meta: {
     title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
+    favicon: content.lab.logo,
   },
   brand: {
     mark: content.lab.mark,
+    logo: content.lab.logo,
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
-  theme: {
-    violet: "#5369d8",
-    "violet-dark": "#3549ac",
-    "violet-soft": "#e9edff",
-  },
+  theme: AIM_THEME,
   labels: { overview: "Overview", about: "About" },
   hero: {
     shortTitle: content.paper.shortTitle,

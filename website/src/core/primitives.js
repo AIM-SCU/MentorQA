@@ -1,8 +1,14 @@
 import { icon } from "./icons.js";
 
+function BrandMark(brand) {
+  return brand.logo
+    ? `<img class="brand-logo" src="${brand.logo}" alt="${brand.mark} logo" />`
+    : `<span class="brand-mark">${brand.mark}</span>`;
+}
+
 export function Sidebar({ brand, navigation }) {
   return `<aside class="sidebar" id="sidebar">
-    <div class="brand"><span class="brand-mark">${brand.mark}</span>${brand.label ? `<span>${brand.label}</span>` : ""}</div>
+    <div class="brand">${BrandMark(brand)}${brand.label ? `<span>${brand.label}</span>` : ""}</div>
     <button class="sidebar-close icon-button" data-menu-close aria-label="Close menu">${icon("close")}</button>
     <nav aria-label="Page sections">${navigation.map((item, index) => `
       <a class="nav-link ${index === 0 ? "active" : ""}" href="#${item.id}">${icon(item.icon)}<span>${item.label}</span></a>
@@ -12,7 +18,7 @@ export function Sidebar({ brand, navigation }) {
 }
 
 export function Topbar({ brand, title }) {
-  return `<header class="mobile-topbar"><div class="brand"><span class="brand-mark">${brand.mark}</span><span>${title}</span></div><button class="icon-button" data-menu-open aria-label="Open menu">${icon("menu")}</button></header>`;
+  return `<header class="mobile-topbar"><div class="brand">${BrandMark(brand)}<span>${title}</span></div><button class="icon-button" data-menu-open aria-label="Open menu">${icon("menu")}</button></header>`;
 }
 
 export function SectionHeading({ eyebrow, title, description }) {
@@ -29,5 +35,5 @@ export function ResourceLink(resource, fallbackStyle = "secondary") {
 }
 
 export function Footer({ brand, title, authors, resources = [] }) {
-  return `<footer id="about"><div><span class="brand-mark">${brand.mark}</span><p>${title}${authors?.length ? ` · ${authors.join(", ")}` : ""}</p></div><div class="footer-links">${resources.map((resource) => `<a href="${resource.url}" target="_blank" rel="noreferrer">${resource.label} ${icon("external")}</a>`).join("")}</div></footer>`;
+  return `<footer id="about"><div>${BrandMark(brand)}<p>${title}${authors?.length ? ` · ${authors.join(", ")}` : ""}</p></div><div class="footer-links">${resources.map((resource) => `<a href="${resource.url}" target="_blank" rel="noreferrer">${resource.label} ${icon("external")}</a>`).join("")}</div></footer>`;
 }

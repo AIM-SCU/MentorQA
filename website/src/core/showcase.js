@@ -14,6 +14,16 @@ function applyDocumentMetadata(config) {
   document.title = config.meta?.title ?? `${config.hero.title} · ${config.brand.label || config.brand.mark}`;
   const description = document.querySelector('meta[name="description"]');
   if (description && config.meta?.description) description.content = config.meta.description;
+  let favicon = document.querySelector('link[rel="icon"]');
+  if (config.meta?.favicon) {
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.rel = "icon";
+      document.head.append(favicon);
+    }
+    favicon.href = config.meta.favicon;
+    favicon.type = config.meta.favicon.toLowerCase().includes(".svg") ? "image/svg+xml" : "image/png";
+  }
   Object.entries(config.theme ?? {}).forEach(([token, value]) => document.documentElement.style.setProperty(`--${token}`, value));
 }
 

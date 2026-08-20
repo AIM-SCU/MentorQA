@@ -17,6 +17,7 @@ Do not edit `app.js`, HTML, CSS, components, layout code, charts, or interaction
 
 - Flexible highlight cards for metrics, awards, achievements, or key messages
 - Language and metric counts
+- Shared AIM orange-and-turquoise theme and chart palette
 - Browser titles and search descriptions from the project content
 - Responsive layouts with one to five columns
 - Donut colors and selection behavior
@@ -33,7 +34,7 @@ Keep all paper-specific website images in:
 website/assets/
 ```
 
-Apart from `src/project/site.js` and paper-specific files in `assets/`, the website folder is project-agnostic and should be reused unchanged.
+Apart from `src/project/site.js` and paper-specific files in `assets/`, the website folder is project-agnostic within the AIM lab and should be reused unchanged. The shared AIM colors live in `src/core/theme.js`, outside the editable project content.
 
 Example:
 

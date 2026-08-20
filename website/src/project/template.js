@@ -1,3 +1,5 @@
+import { AIM_CHART_COLORS, AIM_THEME } from "../core/theme.js";
+
 /**
  * RESEARCH SHOWCASE TEMPLATE
  *
@@ -11,6 +13,7 @@
 const content = {
   lab: {
     mark: "LAB",
+    logo: "", // Optional path to a lab logo image
     name: "[Lab name]",
     tagline: "", // Optional short label shown below the logo
     institution: "[University or institution]",
@@ -115,7 +118,7 @@ const content = {
 // ──────────────────────── EDITABLE CONTENT: END ────────────────────────
 // Everything below builds the page automatically. No editing is required.
 
-const languageColors = ["#5369d8", "#8b75df", "#39a39c", "#e1a344", "#d56d88"];
+const languageColors = AIM_CHART_COLORS;
 const metricCount = content.evaluation.groups.reduce(
   (total, group) => total + group.rows.reduce((groupTotal, row) => groupTotal + row.length, 0),
   0,
@@ -135,17 +138,15 @@ export const siteProject = {
   meta: {
     title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
+    favicon: content.lab.logo,
   },
   brand: {
     mark: content.lab.mark,
+    logo: content.lab.logo,
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
-  theme: {
-    violet: "#5369d8",
-    "violet-dark": "#3549ac",
-    "violet-soft": "#e9edff",
-  },
+  theme: AIM_THEME,
   labels: { overview: "Overview", about: "About" },
   hero: {
     shortTitle: content.paper.shortTitle,

@@ -16,6 +16,16 @@ const content = {
     institution: "Santa Clara University",
   },
 
+  theme: {
+    primary: "#E56717",
+    primaryDark: "#9B3D08",
+    primarySoft: "#FFF1E8",
+    secondary: "#00B4D9",
+    secondaryDark: "#006A7D",
+    secondarySoft: "#E5F8FC",
+    chartColors: ["#E56717", "#00B4D9", "#007C89", "#F4B942", "#1367A8"],
+  },
+
   paper: {
     shortTitle: "MentorQA",
     title: "Beyond Factual QA",
@@ -133,7 +143,7 @@ const content = {
 // ──────────────────────── EDITABLE CONTENT: END ────────────────────────
 // Everything below builds the page automatically. No editing is required.
 
-const languageColors = ["#5369d8", "#8b75df", "#39a39c", "#e1a344", "#d56d88"];
+const languageColors = content.theme.chartColors;
 const metricCount = content.evaluation.groups.reduce(
   (total, group) => total + group.rows.reduce((groupTotal, row) => groupTotal + row.length, 0),
   0,
@@ -160,9 +170,12 @@ export const siteProject = {
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
-    violet: "#5369d8",
-    "violet-dark": "#3549ac",
-    "violet-soft": "#e9edff",
+    primary: content.theme.primary,
+    "primary-dark": content.theme.primaryDark,
+    "primary-soft": content.theme.primarySoft,
+    secondary: content.theme.secondary,
+    "secondary-dark": content.theme.secondaryDark,
+    "secondary-soft": content.theme.secondarySoft,
   },
   labels: { overview: "Overview", about: "About" },
   hero: {

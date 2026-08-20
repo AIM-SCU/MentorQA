@@ -17,6 +17,7 @@ Do not edit `app.js`, HTML, CSS, components, layout code, charts, or interaction
 
 - Flexible highlight cards for metrics, awards, achievements, or key messages
 - Language and metric counts
+- Configurable primary, secondary, and chart color palettes
 - Browser titles and search descriptions from the project content
 - Responsive layouts with one to five columns
 - Donut colors and selection behavior

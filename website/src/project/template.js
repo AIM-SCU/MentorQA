@@ -11,6 +11,7 @@
 const content = {
   lab: {
     mark: "LAB",
+    logo: "", // Optional path to a lab logo image
     name: "[Lab name]",
     tagline: "", // Optional short label shown below the logo
     institution: "[University or institution]",
@@ -18,11 +19,13 @@ const content = {
 
   theme: {
     primary: "#5369D8",
-    primaryDark: "#3549AC",
-    primarySoft: "#E9EDFF",
     secondary: "#39A39C",
-    secondaryDark: "#26746F",
-    secondarySoft: "#E8F5F3",
+    secondaryText: "#26746F",
+    dark: "#10172D",
+    ink: "#183843",
+    muted: "#65777A",
+    line: "#E2EAE6",
+    canvas: "#F7FAF8",
     chartColors: ["#5369D8", "#8B75DF", "#39A39C", "#E1A344", "#D56D88"],
   },
 
@@ -145,19 +148,23 @@ export const siteProject = {
   meta: {
     title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
+    favicon: content.lab.logo,
   },
   brand: {
     mark: content.lab.mark,
+    logo: content.lab.logo,
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
     primary: content.theme.primary,
-    "primary-dark": content.theme.primaryDark,
-    "primary-soft": content.theme.primarySoft,
     secondary: content.theme.secondary,
-    "secondary-dark": content.theme.secondaryDark,
-    "secondary-soft": content.theme.secondarySoft,
+    "secondary-text": content.theme.secondaryText,
+    dark: content.theme.dark,
+    ink: content.theme.ink,
+    muted: content.theme.muted,
+    line: content.theme.line,
+    canvas: content.theme.canvas,
   },
   labels: { overview: "Overview", about: "About" },
   hero: {

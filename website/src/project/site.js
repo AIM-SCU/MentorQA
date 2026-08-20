@@ -11,6 +11,7 @@
 const content = {
   lab: {
     mark: "AIM",
+    logo: "./assets/aim_logo.png",
     name: "AIM",
     tagline: "",
     institution: "Santa Clara University",
@@ -18,12 +19,14 @@ const content = {
 
   theme: {
     primary: "#E56717",
-    primaryDark: "#9B3D08",
-    primarySoft: "#FFF1E8",
     secondary: "#00B4D9",
-    secondaryDark: "#006A7D",
-    secondarySoft: "#E5F8FC",
-    chartColors: ["#E56717", "#00B4D9", "#007C89", "#F4B942", "#1367A8"],
+    secondaryText: "#007880",
+    dark: "#004868",
+    ink: "#183843",
+    muted: "#65777A",
+    line: "#E2EAE6",
+    canvas: "#F7FAF8",
+    chartColors: ["#E85838", "#F0A038", "#00B4D9", "#007880", "#0868A0"],
   },
 
   paper: {
@@ -163,19 +166,23 @@ export const siteProject = {
   meta: {
     title: `${content.paper.shortTitle} — ${content.paper.title}`,
     description: content.paper.description,
+    favicon: content.lab.logo,
   },
   brand: {
     mark: content.lab.mark,
+    logo: content.lab.logo,
     label: content.lab.tagline,
     footer: `${content.lab.name} · ${content.lab.institution}`,
   },
   theme: {
     primary: content.theme.primary,
-    "primary-dark": content.theme.primaryDark,
-    "primary-soft": content.theme.primarySoft,
     secondary: content.theme.secondary,
-    "secondary-dark": content.theme.secondaryDark,
-    "secondary-soft": content.theme.secondarySoft,
+    "secondary-text": content.theme.secondaryText,
+    dark: content.theme.dark,
+    ink: content.theme.ink,
+    muted: content.theme.muted,
+    line: content.theme.line,
+    canvas: content.theme.canvas,
   },
   labels: { overview: "Overview", about: "About" },
   hero: {
